@@ -1,0 +1,458 @@
+
+		<link rel="stylesheet" href="assets/css/bootstrap.css" />
+		<link rel="stylesheet" href="components/font-awesome/css/font-awesome.css" />
+
+		<link rel="stylesheet" href="components/_mod/google-code-prettify/prettify.css" />
+
+		<link rel="stylesheet" href="assets/css/ace-fonts.css" />
+
+		<link rel="stylesheet" href="assets/css/ace.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+		<link rel="stylesheet" href="assets/css/ace-skins.css" />
+		<link rel="stylesheet" href="assets/css/ace-rtl.css" />
+
+		<script src="assets/js/ace-extra.js"></script>
+
+<style>
+    .flex-container {
+        width: 103%;        
+
+    }
+</style>
+
+
+	
+	<div class = "flex-container" ng-app="myApp" ng-controller="typographyCtrl">
+   <div class = "row" >
+   <div class="col-sm-10">
+
+	
+<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+						<ul class="breadcrumb">
+							<li>
+								<i class="ace-icon fa fa-home home-icon"></i>
+								<a href="">Home</a>
+							</li>
+
+							<li>
+								<a href="">UI &amp; Elements</a>
+							</li>
+							<li class="active">Typography</li>
+						</ul><!-- /.breadcrumb -->
+
+						<!-- #section:basics/content.searchbox -->
+						<div class="nav-search" id="nav-search">
+							<form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+									<i class="ace-icon fa fa-search nav-search-icon"></i>
+								</span>
+							</form>
+						</div><!-- /.nav-search -->
+
+						<!-- /section:basics/content.searchbox -->
+					</div>
+					<!-- /section:basics/content.breadcrumbs -->
+					<div class="page-content">
+						<!-- #section:settings.box -->
+						<div class="ace-settings-container" id="ace-settings-container">
+							<div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
+								<i class="ace-icon fa fa-cog bigger-130"></i>
+							</div>
+
+							<div class="ace-settings-box clearfix" id="ace-settings-box">
+								<div class="pull-left width-50">
+									<!-- #section:settings.skins -->
+									<div class="ace-settings-item">
+										<div class="pull-left">
+											<select id="skin-colorpicker" class="hide">
+												<option data-skin="no-skin" value="#438EB9">#438EB9</option>
+												<option data-skin="skin-1" value="#222A2D">#222A2D</option>
+												<option data-skin="skin-2" value="#C6487E">#C6487E</option>
+												<option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+											</select>
+										</div>
+										<span>&nbsp; Choose Skin</span>
+									</div>
+
+									<!-- /section:settings.skins -->
+
+									<!-- #section:settings.navbar -->
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-navbar" autocomplete="off" />
+										<label class="lbl" for="ace-settings-navbar"> Fixed Navbar</label>
+									</div>
+
+									<!-- /section:settings.navbar -->
+
+									<!-- #section:settings.sidebar -->
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-sidebar" autocomplete="off" />
+										<label class="lbl" for="ace-settings-sidebar"> Fixed Sidebar</label>
+									</div>
+
+									<!-- /section:settings.sidebar -->
+
+									<!-- #section:settings.breadcrumbs -->
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-breadcrumbs" autocomplete="off" />
+										<label class="lbl" for="ace-settings-breadcrumbs"> Fixed Breadcrumbs</label>
+									</div>
+
+									<!-- /section:settings.breadcrumbs -->
+
+									<!-- #section:settings.rtl -->
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" autocomplete="off" />
+										<label class="lbl" for="ace-settings-rtl"> Right To Left (rtl)</label>
+									</div>
+
+									<!-- /section:settings.rtl -->
+
+									<!-- #section:settings.container -->
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-add-container" autocomplete="off" />
+										<label class="lbl" for="ace-settings-add-container">
+											Inside
+											<b>.container</b>
+										</label>
+									</div>
+
+									<!-- /section:settings.container -->
+								</div><!-- /.pull-left -->
+
+								<div class="pull-left width-50">
+									<!-- #section:basics/sidebar.options -->
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover" autocomplete="off" />
+										<label class="lbl" for="ace-settings-hover"> Submenu on Hover</label>
+									</div>
+
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-compact" autocomplete="off" />
+										<label class="lbl" for="ace-settings-compact"> Compact Sidebar</label>
+									</div>
+
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight" autocomplete="off" />
+										<label class="lbl" for="ace-settings-highlight"> Alt. Active Item</label>
+									</div>
+
+									<!-- /section:basics/sidebar.options -->
+								</div><!-- /.pull-left -->
+							</div><!-- /.ace-settings-box -->
+						</div><!-- /.ace-settings-container -->
+
+						<!-- /section:settings.box -->
+						<div class="page-header">
+							<h1>
+								{{lbels}}
+								<small>
+									<i class="ace-icon fa fa-angle-double-right"></i>
+									{{lhds}}
+								</small>
+							</h1>
+						</div><!-- /.page-header -->
+
+						<div class="row">
+							<div class="col-xs-12">
+								<!-- PAGE CONTENT BEGINS -->
+								<div class="row">
+									<div class="col-sm-6">
+										<h4>{{labhds}}</h4>
+
+										<hr />
+										<span ng-repeat="cpg in box1Contents"> 
+										<h1>{{cpg.heading}}</h1>
+										<p class="lead">{{cpg.data}}</p>
+											
+									<h2>{{cpg.h2}}</h2>
+										<p>{{cpg.datas}}</p>
+											
+											<h3>{{cpg.h3}}</h3>
+										<p>{{cpg.dat}}</p>
+										<h4>{{cpg.h4}}</h4>
+										<h5>{{cpg.h5}}</h5>
+										<h6>{{cpg.h6}}</h6>
+										</span>
+									</div><!-- /.col -->
+
+									<div class="col-sm-6">
+										<div class="widget-box">
+											<div class="widget-header widget-header-flat">
+												<h4 class="widget-title">{{label}}</h4>
+											</div>
+
+											<div class="widget-body">
+												<div class="widget-main">
+													<div class="row">
+														<div class="col-sm-6">
+														
+															<ul>
+														<span ng-repeat="cpg in box2Contents"> 
+																<li>{{cpg.data}}
+
+															<small>{{cpg.l1}}</small>
+																	
+															<b>{{cpg.l2}}</b>
+																	
+															<i>{{cpg.l3}}</i></li>	
+														</span>
+														
+														<span ng-repeat="cpg in box2Content"> 
+																<li>
+																	<ul class="list-unstyled">
+																		<li>
+																	<i class="{{cpg.icon}}"></i>
+																			{{cpg.l1}}
+																		</li>
+																
+																	</ul>
+																</li>
+																</span>
+															<span ng-repeat="cpg in box2Cont"> 
+															<li>{{cpg.data}}
+
+														 <strong>{{cpg.datas}}</strong>
+														<em>{{cpg.dat}}</em>
+																</li>
+																</span>
+															</ul>
+															
+														</div>
+
+														<div class="col-sm-6">
+															<ol>
+															<span ng-repeat="cpg in box2Contain">
+															
+															<li>{{cpg.data}}
+															<i class="{{cpg.icon}}">
+															<b>{{cpg.b}}</b>{{cpg.d1}}</i>
+													</li>
+															</span>
+															</ol>
+														</div>
+													</div>
+
+													<hr />
+													<div class="row">
+														<div class="col-xs-12">
+															<ul class="list-unstyled spaced">
+															<span ng-repeat="cpg in box2Contains">
+															<li>
+															<i class="{{cpg.icon}}"></i>
+																	{{cpg.data}}
+																</li>
+															
+																</span>
+															</ul>
+
+															<ul class="list-unstyled spaced2">
+															<span ng-repeat="cpg in box2Con">
+															 <li>
+																	<i class="{{cpg.icon}}"></i>
+																	<a class="{{cpg.style}}"></a>
+																	{{cpg.data}}
+																	<i>{{cpg.d1}}</i>
+																</li>
+																
+																</span>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div><!-- /.col -->
+								</div>
+
+								<hr />
+								<div class="row">
+									<div class="col-sm-4">
+										<div class="widget-box">
+											<div class="widget-header widget-header-flat">
+												<h4 class="widget-title smaller">
+													<i class="ace-icon fa fa-quote-left smaller-80"></i>
+													{{label}}
+												</h4>
+											</div>
+
+											<div class="widget-body">
+												<div class="widget-main">
+													<div class="row">
+														<div class="col-xs-12">
+														<span ng-repeat="cpg in box3Contents">
+															<blockquote class="pull-right">
+																<p>{{cpg.data}}</p>
+
+																<small>
+																	{{cpg.d1}}
+																	<cite title="Source Title">{{cpg.d2}}</cite>
+																</small>
+															</blockquote>
+															</span>
+														</div>
+													</div>
+
+													<div class="row">
+														<div class="col-xs-12">
+														<span ng-repeat="cpg in box3Content">
+															<blockquote>
+																<p class="lighter line-height-125">
+																	{{cpg.data}}
+																</p>
+
+																<small>
+																	{{cpg.d1}}
+																	<cite title="Source Title">{{cpg.d2}}</cite>
+																</small>
+															</blockquote>
+															</span>
+														</div>
+													</div>
+
+													<hr />
+													<span ng-repeat="cpg in box3Cont">
+													<address>
+													<strong>{{cpg.data}}</strong>
+
+														<br />
+														{{cpg.d1}}
+														<br />
+														{{cpg.d2}}
+														<br />
+														<abbr title="Phone">{{cpg.d3}}</abbr>
+														{{cpg.d4}}
+													</address>
+
+													<address>
+														<strong>{{cpg.d5}}</strong>
+
+														<br />
+														<a href="mailto:#">{{cpg.d6}}</a>
+													</address>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-sm-8">
+										<div class="row">
+											<div class="col-xs-12">
+												<div class="widget-box">
+													<div class="widget-header widget-header-flat">
+														<h4 class="widget-title smaller">{{label}}</h4>
+
+														<div class="widget-toolbar">
+															<label>
+																<small class="green">
+																	<b>Horizontal</b>
+																</small>
+
+																<input id="id-check-horizontal" type="checkbox" class="ace ace-switch ace-switch-6" />
+																<span class="lbl middle"></span>
+															</label>
+														</div>
+													</div>
+
+													<div class="widget-body">
+														<div class="widget-main">
+															<code class="pull-right" id="dt-list-code">&lt;dl&gt;</code>
+										<span ng-repeat="cpg in box4Contents">
+											<dl id="dt-list-1">
+											<dt>{{cpg.data}}</dt>
+											<dd>{{cpg.d1}}</dd> </dl>
+															
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="space-6"></div>
+
+										<div class="row">
+											<div class="col-xs-12">
+												<div class="widget-box">
+													<div class="widget-header widget-header-flat">
+														<h4 class="smaller">
+															<i class="ace-icon fa fa-code"></i>
+															{{label}}
+														</h4>
+													</div>
+
+													<div class="widget-body">
+														<div class="widget-main">
+														<span ng-repeat="cpg in box5Contents">
+															<pre class="prettyprint linenums">{{cpg.data}}</pre>
+															
+														</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div><!-- PAGE CONTENT ENDS -->
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div>
+					</div></div></div>
+					<!-- /.page-content -->
+
+ 		<script src="components/jquery/dist/jquery.js"></script>
+
+		<script type="text/javascript">
+			if('ontouchstart' in document.documentElement) document.write("<script src='components/_mod/jquery.mobile.custom/jquery.mobile.custom.js'>"+"<"+"/script>");
+		</script>
+		<script src="components/bootstrap/dist/js/bootstrap.js"></script>
+
+		<!-- page specific plugin scripts -->
+		<script src="components/google-code-prettify/src/prettify.js"></script>
+
+		<!-- ace scripts -->
+		<script src="assets/js/src/elements.scroller.js"></script>
+		<script src="assets/js/src/elements.colorpicker.js"></script>
+		<script src="assets/js/src/elements.fileinput.js"></script>
+		<script src="assets/js/src/elements.typeahead.js"></script>
+		<script src="assets/js/src/elements.wysiwyg.js"></script>
+		<script src="assets/js/src/elements.spinner.js"></script>
+		<script src="assets/js/src/elements.treeview.js"></script>
+		<script src="assets/js/src/elements.wizard.js"></script>
+		<script src="assets/js/src/elements.aside.js"></script>
+		<script src="assets/js/src/ace.js"></script>
+		<script src="assets/js/src/ace.basics.js"></script>
+		<script src="assets/js/src/ace.scrolltop.js"></script>
+		<script src="assets/js/src/ace.ajax-content.js"></script>
+		<script src="assets/js/src/ace.touch-drag.js"></script>
+		<script src="assets/js/src/ace.sidebar.js"></script>
+		<script src="assets/js/src/ace.sidebar-scroll-1.js"></script>
+		<script src="assets/js/src/ace.submenu-hover.js"></script>
+		<script src="assets/js/src/ace.widget-box.js"></script>
+		<script src="assets/js/src/ace.settings.js"></script>
+		<script src="assets/js/src/ace.settings-rtl.js"></script>
+		<script src="assets/js/src/ace.settings-skin.js"></script>
+		<script src="assets/js/src/ace.widget-on-reload.js"></script>
+		<script src="assets/js/src/ace.searchbox-autocomplete.js"></script>
+
+		<!-- inline scripts related to this page -->
+		<script type="text/javascript">
+			jQuery(function($) {
+			
+				window.prettyPrint && prettyPrint();
+				$('#id-check-horizontal').removeAttr('checked').on('click', function(){
+					$('#dt-list-1').toggleClass('dl-horizontal').prev().html(this.checked ? '&lt;dl class="dl-horizontal"&gt;' : '&lt;dl&gt;');
+				});
+			
+			})
+		</script>
+
+
+
+
+
+
+
+
+
