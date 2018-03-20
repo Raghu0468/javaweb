@@ -28,24 +28,22 @@
     }
 </style>
 
-	<div class = "flex-container" ng-app="myApp" ng-controller="ptableCtrl">
+	<div class = "flex-container" ng-app="myApp">
    <div class = "row" >
    <div class="col-sm-10">
-
-		<div class="main-container ace-save-state" id="main-container">
-			
-			<div class="main-content">
+   
+   	<div class="main-content">
 				<div class="main-content-inner">
 					<!-- #section:basics/content.breadcrumbs -->
 					<div class="breadcrumbs ace-save-state" id="breadcrumbs">
 						<ul class="breadcrumb">
 							<li>
 								<i class="ace-icon fa fa-home home-icon"></i>
-								<a href="">Home</a>
+								<a href="#">Home</a>
 							</li>
 
 							<li>
-								<a href="">More Pages</a>
+								<a href="#">More Pages</a>
 							</li>
 							<li class="active">Pricing Tables</li>
 						</ul><!-- /.breadcrumb -->
@@ -173,35 +171,54 @@
 									<div class="col-xs-6 col-sm-3 pricing-box">
 										<div class="widget-box widget-color-dark">
 											<div class="widget-header">
-									
-												
-											<h5 class="widget-title bigger lighter">{{defname}}</h5>
+												<h5 class="widget-title bigger lighter">Basic Package</h5>
 											</div>
-								
+
 											<div class="widget-body">
 												<div class="widget-main">
-												<span ng-repeat="cpg in box1Contents"> 
 													<ul class="list-unstyled spaced2">
-													
-														<!-- <li> -->
-														 
-														
+														<li>
 															<i class="ace-icon fa fa-check green"></i>
-															{{cpg.data}}
-														
+															10 GB Disk Space
+														</li>
+
+														<li>
+															<i class="ace-icon fa fa-check green"></i>
+															200 GB Bandwidth
+														</li>
+
+														<li>
+															<i class="ace-icon fa fa-check green"></i>
+															100 Email Accounts
+														</li>
+
+														<li>
+															<i class="ace-icon fa fa-check green"></i>
+															10 MySQL Databases
+														</li>
+
+														<li>
+															<i class="ace-icon fa fa-check green"></i>
+															$10 Ad Credit
+														</li>
+
+														<li>
+															<i class="ace-icon fa fa-times red"></i>
+															Free Domain
+														</li>
 													</ul>
-														</span>
+
 													<hr />
 													<div class="price">
-														{{fname}}
-														<small>{{fsname}}</small>
+														$5
+														<small>/month</small>
 													</div>
 												</div>
-													
+
 												<div>
 													<a href="#" class="btn btn-block btn-inverse">
 														<i class="ace-icon fa fa-shopping-cart bigger-110"></i>
-														<span>{{b1}}</span>
+														<span>Buy</span>
 													</a>
 												</div>
 											</div>
@@ -211,30 +228,54 @@
 									<div class="col-xs-6 col-sm-3 pricing-box">
 										<div class="widget-box widget-color-orange">
 											<div class="widget-header">
-												<h5 class="widget-title bigger lighter">{{dname}}</h5>
+												<h5 class="widget-title bigger lighter">Starter Package</h5>
 											</div>
 
 											<div class="widget-body">
 												<div class="widget-main">
-												<span ng-repeat="cpg in box2Contents"> 
 													<ul class="list-unstyled spaced2">
-														
+														<li>
 															<i class="ace-icon fa fa-check green"></i>
-															{{cpg.data}}
-														
+															50 GB Disk Space
+														</li>
+
+														<li>
+															<i class="ace-icon fa fa-check green"></i>
+															1 TB Bandwidth
+														</li>
+
+														<li>
+															<i class="ace-icon fa fa-check green"></i>
+															1000 Email Accounts
+														</li>
+
+														<li>
+															<i class="ace-icon fa fa-check green"></i>
+															100 MySQL Databases
+														</li>
+
+														<li>
+															<i class="ace-icon fa fa-check green"></i>
+															$25 Ad Credit
+														</li>
+
+														<li>
+															<i class="ace-icon fa fa-check green"></i>
+															Free Domain
+														</li>
 													</ul>
-														</span>
+
 													<hr />
 													<div class="price">
-														{{lname}}
-														<small>{{l2name}}</small>
+														$10
+														<small>/month</small>
 													</div>
 												</div>
 
 												<div>
 													<a href="#" class="btn btn-block btn-warning">
 														<i class="ace-icon fa fa-shopping-cart bigger-110"></i>
-														<span>{{b2}}</span>
+														<span>Buy</span>
 													</a>
 												</div>
 											</div>
@@ -244,30 +285,54 @@
 									<div class="col-xs-6 col-sm-3 pricing-box">
 										<div class="widget-box widget-color-blue">
 											<div class="widget-header">
-												<h5 class="widget-title bigger lighter">{{ddname}}</h5>
+												<h5 class="widget-title bigger lighter">Business Package</h5>
 											</div>
 
 											<div class="widget-body">
 												<div class="widget-main">
-												<span ng-repeat="cpg in box3Contents"> 
 													<ul class="list-unstyled spaced2">
-														<!-- <li> -->
+														<li>
 															<i class="ace-icon fa fa-check green"></i>
-															{{cpg.data}}
-														
+															200 GB Disk Space
+														</li>
+
+														<li>
+															<i class="ace-icon fa fa-check green"></i>
+															Unlimited Bandwidth
+														</li>
+
+														<li>
+															<i class="ace-icon fa fa-check green"></i>
+															1000 Email Accounts
+														</li>
+
+														<li>
+															<i class="ace-icon fa fa-check green"></i>
+															200 MySQL Databases
+														</li>
+
+														<li>
+															<i class="ace-icon fa fa-check green"></i>
+															$25 Ad Credit
+														</li>
+
+														<li>
+															<i class="ace-icon fa fa-check green"></i>
+															Free Domain
+														</li>
 													</ul>
-													</span>
+
 													<hr />
 													<div class="price">
-														{{l3name}}
-														<small>{{l3ame}}</small>
+														$15
+														<small>/month</small>
 													</div>
 												</div>
 
 												<div>
 													<a href="#" class="btn btn-block btn-primary">
 														<i class="ace-icon fa fa-shopping-cart bigger-110"></i>
-														<span>{{b3}}</span>
+														<span>Buy</span>
 													</a>
 												</div>
 											</div>
@@ -277,30 +342,54 @@
 									<div class="col-xs-6 col-sm-3 pricing-box">
 										<div class="widget-box widget-color-green">
 											<div class="widget-header">
-												<h5 class="widget-title bigger lighter">{{dename}}</h5>
+												<h5 class="widget-title bigger lighter">Ultimate Package</h5>
 											</div>
 
 											<div class="widget-body">
 												<div class="widget-main">
-												<span ng-repeat="cpg in box4Contents"> 
 													<ul class="list-unstyled spaced2">
-														<!-- <li> -->
+														<li>
 															<i class="ace-icon fa fa-check green"></i>
-															{{cpg.data}}
-														
+															Unlimited Space
+														</li>
+
+														<li>
+															<i class="ace-icon fa fa-check green"></i>
+															Unlimited Bandwidth
+														</li>
+
+														<li>
+															<i class="ace-icon fa fa-check green"></i>
+															Unlimited Email Accounts
+														</li>
+
+														<li>
+															<i class="ace-icon fa fa-check green"></i>
+															Unlimited MySQL Databases
+														</li>
+
+														<li>
+															<i class="ace-icon fa fa-check green"></i>
+															$50 Ad Credit
+														</li>
+
+														<li>
+															<i class="ace-icon fa fa-check green"></i>
+															2 Free Domains
+														</li>
 													</ul>
-														</span>
+
 													<hr />
 													<div class="price">
-														{{l4name}}
-														<small>{{l4ame}}</small>
+														$25
+														<small>/month</small>
 													</div>
 												</div>
 
 												<div>
 													<a href="#" class="btn btn-block btn-success">
 														<i class="ace-icon fa fa-shopping-cart bigger-110"></i>
-														<span>{{b4}}</span>
+														<span>Buy</span>
 													</a>
 												</div>
 											</div>
@@ -310,13 +399,10 @@
 									<!-- /section:pages/pricing.large -->
 								</div>
 
-								
-								
-								
-									<div class="space-24"></div>
-								<h3 class="header smaller red">{{ds4}} </h3>
+								<div class="space-24"></div>
+								<h3 class="header smaller red">Small Style</h3>
 
-									<div class="row">
+								<div class="row">
 									<!-- #section:pages/pricing.small-header -->
 									<div class="col-xs-4 col-sm-3 pricing-span-header">
 										<div class="widget-box transparent">
@@ -326,10 +412,13 @@
 
 											<div class="widget-body">
 												<div class="widget-main no-padding">
-													<ul  class="list-unstyled list-striped pricing-table-header">
-														
-														<li ng-repeat="cpg in box00Contents" >{{cpg.data}} </li>
-														
+													<ul class="list-unstyled list-striped pricing-table-header">
+														<li>Disk Space </li>
+														<li>Bandwidth </li>
+														<li>Email Accounts </li>
+														<li>MySQL Databases </li>
+														<li>Ad Credit </li>
+														<li>Free Domain </li>
 													</ul>
 												</div>
 											</div>
@@ -348,20 +437,16 @@
 
 												<div class="widget-body">
 													<div class="widget-main no-padding">
-														<ul  class="list-unstyled list-striped pricing-table">
-															<li ng-repeat="cpg in box5Contents">
+														<ul class="list-unstyled list-striped pricing-table">
+															<li> 10 GB </li>
+															<li> 200 GB </li>
+															<li> 100 </li>
+															<li> 10 </li>
+															<li> $10 </li>
 
-
-															<span ng-if="cpg.label == 1">
-															<i class="ace-icon fa fa-check green"></i> 
-															</span>
-														<span ng-if="cpg.label == 0">
-														  <i class="ace-icon fa fa-times red"></i> 
-														</span>
-														<span ng-if="cpg.label == 2">
- 
-															</span>
-																		{{cpg.data}} </li>
+															<li>
+																<i class="ace-icon fa fa-times red"></i>
+															</li>
 														</ul>
 
 														<div class="price">
@@ -389,20 +474,17 @@
 
 												<div class="widget-body">
 													<div class="widget-main no-padding">
-																		<ul  class="list-unstyled list-striped pricing-table">
-															<li ng-repeat="cpg in box6Contents">
+														<ul class="list-unstyled list-striped pricing-table">
+															<li> 50 GB </li>
+															<li> 1 TB </li>
+															<li> 1000 </li>
+															<li> 100 </li>
+															<li> $25 </li>
 
-
-															<span ng-if="cpg.label == 1">
-															<i class="ace-icon fa fa-check green"></i> 
-															</span>
-														<span ng-if="cpg.label == 0">
-														  <i class="ace-icon fa fa-times red"></i> 
-														</span>
-														<span ng-if="cpg.label == 2">
- 
-															</span>
-																		{{cpg.data}} </li>
+															<li>
+																<i class="ace-icon fa fa-check green"></i>
+																1
+															</li>
 														</ul>
 
 														<div class="price">
@@ -430,20 +512,17 @@
 
 												<div class="widget-body">
 													<div class="widget-main no-padding">
-																		<ul  class="list-unstyled list-striped pricing-table">
-															<li ng-repeat="cpg in box7Contents">
+														<ul class="list-unstyled list-striped pricing-table">
+															<li> 200 GB </li>
+															<li> Unlimited </li>
+															<li> 1000 </li>
+															<li> 200 </li>
+															<li> $25 </li>
 
-
-															<span ng-if="cpg.label == 1">
-															<i class="ace-icon fa fa-check green"></i> 
-															</span>
-														<span ng-if="cpg.label == 0">
-														  <i class="ace-icon fa fa-times red"></i> 
-														</span>
-														<span ng-if="cpg.label == 2">
- 
-															</span>
-																		{{cpg.data}} </li>
+															<li>
+																<i class="ace-icon fa fa-check green"></i>
+																1
+															</li>
 														</ul>
 
 														<div class="price">
@@ -471,20 +550,17 @@
 
 												<div class="widget-body">
 													<div class="widget-main no-padding">
-															<ul  class="list-unstyled list-striped pricing-table">
-															<li ng-repeat="cpg in box8Contents">
+														<ul class="list-unstyled list-striped pricing-table">
+															<li> Unlimited </li>
+															<li> Unlimited </li>
+															<li> Unlimited </li>
+															<li> Unlimited </li>
+															<li> $50 </li>
 
-
-															<span ng-if="cpg.label == 1">
-															<i class="ace-icon fa fa-check green"></i> 
-															</span>
-														<span ng-if="cpg.label == 0">
-														  <i class="ace-icon fa fa-times red"></i> 
-														</span>
-														<span ng-if="cpg.label == 2">
- 
-															</span>
-																		{{cpg.data}} </li>
+															<li>
+																<i class="ace-icon fa fa-check green"></i>
+																2
+															</li>
 														</ul>
 
 														<div class="price">
@@ -512,20 +588,17 @@
 
 												<div class="widget-body">
 													<div class="widget-main no-padding">
-															<ul  class="list-unstyled list-striped pricing-table">
-															<li ng-repeat="cpg in box9Contents">
+														<ul class="list-unstyled list-striped pricing-table">
+															<li> Unlimited </li>
+															<li> Unlimited </li>
+															<li> Unlimited </li>
+															<li> Unlimited </li>
+															<li> $100 </li>
 
-
-															<span ng-if="cpg.label == 1">
-															<i class="ace-icon fa fa-check green"></i> 
-															</span>
-														<span ng-if="cpg.label == 0">
-														  <i class="ace-icon fa fa-times red"></i> 
-														</span>
-														<span ng-if="cpg.label == 2">
- 
-															</span>
-																		{{cpg.data}} </li>
+															<li>
+																<i class="ace-icon fa fa-check green"></i>
+																3
+															</li>
 														</ul>
 
 														<div class="price">
@@ -547,39 +620,19 @@
 									</div>
 
 									<!-- /section:pages/pricing.small-body -->
-								</div>
-	
-								
-
-								
+								</div><!-- PAGE CONTENT ENDS -->
 							</div><!-- /.col -->
 						</div><!-- /.row -->
 					</div><!-- /.page-content -->
 				</div>
 			</div><!-- /.main-content -->
+   
+   </div>
+   </div>
+   </div>
 
-			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
-				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
-			</a>
-		</div>
-		</div> </div>
-
-		</div>
-		<!-- /.main-container -->
-
-		<!-- basic scripts -->
-
-		<!--[if !IE]> -->
 		<script src="components/jquery/dist/jquery.js"></script>
-
-		<!-- <![endif]-->
-
-		<!--[if IE]>
-<script src="components/jquery.1x/dist/jquery.js"></script>
-<![endif]-->
-		<script type="text/javascript">
-			if('ontouchstart' in document.documentElement) document.write("<script src='components/_mod/jquery.mobile.custom/jquery.mobile.custom.js'>"+"<"+"/script>");
-		</script>
+	
 		<script src="components/bootstrap/dist/js/bootstrap.js"></script>
 
 		<!-- page specific plugin scripts -->

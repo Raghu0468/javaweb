@@ -1,3 +1,19 @@
+		<link rel="stylesheet" href="assets/css/bootstrap.css" />
+		<link rel="stylesheet" href="components/font-awesome/css/font-awesome.css" />
+
+		<!-- page specific plugin styles -->
+
+		<!-- text fonts -->
+		<link rel="stylesheet" href="assets/css/ace-fonts.css" />
+
+		<!-- ace styles -->
+		<link rel="stylesheet" href="assets/css/ace.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+		<link rel="stylesheet" href="assets/css/ace-skins.css" />
+		<link rel="stylesheet" href="assets/css/ace-rtl.css" />
+
+		<script src="assets/js/ace-extra.js"></script>
+
 <style>
     .flex-container {
         width: 103%;        
@@ -8,9 +24,11 @@
 	<div class = "flex-container">
    <div class = "row" >
    <div class="col-sm-10">
-
-	
-<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+   
+   <div class="main-content">
+				<div class="main-content-inner">
+					<!-- #section:basics/content.breadcrumbs -->
+					<div class="breadcrumbs ace-save-state" id="breadcrumbs">
 						<ul class="breadcrumb">
 							<li>
 								<i class="ace-icon fa fa-home home-icon"></i>
@@ -39,6 +57,7 @@
 
 						<!-- /section:basics/content.searchbox -->
 					</div>
+
 					<!-- /section:basics/content.breadcrumbs -->
 					<div class="page-content">
 						<!-- #section:settings.box -->
@@ -190,10 +209,94 @@
 								<!-- PAGE CONTENT ENDS -->
 							</div><!-- /.col -->
 						</div><!-- /.row -->
-					</div>
-					
-					</div></div>
-					
-					</div>
-					<!-- /.page-content -->
+					</div><!-- /.page-content -->
+				</div>
+			</div><!-- /.main-content -->
 
+</div>
+</div>
+</div>
+
+		<script src="components/jquery/dist/jquery.js"></script>
+	
+		<script src="components/bootstrap/dist/js/bootstrap.js"></script>
+
+		<!-- page specific plugin scripts -->
+
+		<!-- ace scripts -->
+		<script src="assets/js/src/elements.scroller.js"></script>
+		<script src="assets/js/src/elements.colorpicker.js"></script>
+		<script src="assets/js/src/elements.fileinput.js"></script>
+		<script src="assets/js/src/elements.typeahead.js"></script>
+		<script src="assets/js/src/elements.wysiwyg.js"></script>
+		<script src="assets/js/src/elements.spinner.js"></script>
+		<script src="assets/js/src/elements.treeview.js"></script>
+		<script src="assets/js/src/elements.wizard.js"></script>
+		<script src="assets/js/src/elements.aside.js"></script>
+		<script src="assets/js/src/ace.js"></script>
+		<script src="assets/js/src/ace.basics.js"></script>
+		<script src="assets/js/src/ace.scrolltop.js"></script>
+		<script src="assets/js/src/ace.ajax-content.js"></script>
+		<script src="assets/js/src/ace.touch-drag.js"></script>
+		<script src="assets/js/src/ace.sidebar.js"></script>
+		<script src="assets/js/src/ace.sidebar-scroll-1.js"></script>
+		<script src="assets/js/src/ace.submenu-hover.js"></script>
+		<script src="assets/js/src/ace.widget-box.js"></script>
+		<script src="assets/js/src/ace.settings.js"></script>
+		<script src="assets/js/src/ace.settings-rtl.js"></script>
+		<script src="assets/js/src/ace.settings-skin.js"></script>
+		<script src="assets/js/src/ace.widget-on-reload.js"></script>
+		<script src="assets/js/src/ace.searchbox-autocomplete.js"></script>
+
+	<script type="text/javascript">
+			jQuery(function($) {
+				$('#id-change-style').on(ace.click_event, function() {
+					var toggler = $('#menu-toggler');
+					var fixed = toggler.hasClass('fixed');
+					var display = toggler.hasClass('display');
+					
+					if(toggler.closest('.navbar').length == 1) {
+						$('#menu-toggler').remove();
+						toggler = $('#sidebar').before('<a id="menu-toggler" data-target="#sidebar" class="menu-toggler" href="#">\
+							<span class="sr-only">Toggle sidebar</span>\
+							<span class="toggler-text"></span>\
+						 </a>').prev();
+			
+						 var ace_sidebar = $('#sidebar').ace_sidebar('ref');
+						 ace_sidebar.set('mobile_style', 2);
+			
+						 var icon = $(this).children().detach();
+						 $(this).text('Hide older Ace toggle button').prepend(icon);
+						 
+						 $('#id-push-content').closest('div').hide();
+						 $('#id-push-content').removeAttr('checked');
+						 $('.sidebar').removeClass('push_away');
+					 } else {
+						$('#menu-toggler').remove();
+						toggler = $('.navbar-brand').before('<button data-target="#sidebar" id="menu-toggler" class="three-bars pull-left menu-toggler navbar-toggle" type="button">\
+							<span class="sr-only">Toggle sidebar</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>\
+						</button>').prev();
+						
+						 var ace_sidebar = $('#sidebar').ace_sidebar('ref');
+						 ace_sidebar.set('mobile_style', 1);
+						
+						var icon = $(this).children().detach();
+						$(this).text('Show older Ace toggle button').prepend(icon);
+						
+						$('#id-push-content').closest('div').show();
+					 }
+			
+					 if(fixed) toggler.addClass('fixed');
+					 if(display) toggler.addClass('display');
+					 
+					 $('.sidebar[data-sidebar-hover=true]').ace_sidebar_hover('reset');
+					 $('.sidebar[data-sidebar-scroll=true]').ace_sidebar_scroll('reset');
+			
+					 return false;
+				});
+				
+				$('#id-push-content').removeAttr('checked').on('click', function() {
+					$('.sidebar').toggleClass('push_away');
+				});
+			});
+		</script>

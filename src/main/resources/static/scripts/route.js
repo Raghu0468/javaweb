@@ -11,7 +11,7 @@ myApp.config(function($routeProvider) {
 			templateUrl: 'elements.html'
 		})
 	.when('/buttons', {
-			templateUrl: 'views/buttons.html'
+			templateUrl: 'buttons.html'
 			
 		})
 		.when('/content-slider', {
@@ -54,19 +54,19 @@ myApp.config(function($routeProvider) {
 			templateUrl: 'faq.html'
 		})
 		.when('/tables', {
-			templateUrl: 'views/tables.html'
+			templateUrl: 'tables.html'
 		})
 		.when('/mobile-menu-2', {
-			templateUrl: 'views/mobile-menu-2.html'
+			templateUrl: 'mobile-menu-2.html'
 		})
 		.when('/mobile-menu-1', {
-			templateUrl: 'views/mobile-menu-1.html'
+			templateUrl: 'mobile-menu-1.html'
 		})
 		.when('/mobile-menu-3', {
-			templateUrl: 'views/mobile-menu-3.html'
+			templateUrl: 'mobile-menu-3.html'
 		})
 		.when('/pricing', {
-			templateUrl: 'views/pricing.html'
+			templateUrl: 'pricing.html'
 		})
 		
 		.when('/gallery', {
@@ -86,16 +86,16 @@ myApp.config(function($routeProvider) {
 			templateUrl: 'search.html'
 		})
 		.when('/error-404', {
-			templateUrl: 'views/error-404.html'
+			templateUrl: 'error-404.html'
 		})
 		.when('/error-500', {
-			templateUrl: 'views/error-500.html'
+			templateUrl: 'error-500.html'
 		})
 		.when('/email', {
-			templateUrl: 'views/email.html'
+			templateUrl: 'email.html'
 		})
 		.when('/typography', {
-			templateUrl: 'views/typography.html'
+			templateUrl: 'typography.html'
 		})
 		.when('/wysiwyg', {
 			templateUrl: 'wysiwyg.html'
@@ -108,28 +108,17 @@ myApp.config(function($routeProvider) {
 			templateUrl: 'grid.html'
 		})
 		.when('/menu', {
-			templateUrl: 'views/menu.html'
+			templateUrl: 'menu.html'
 		})
-		//.when('/header', {
-		//	templateUrl: 'views/header.html'
-		//})
-		//.when('/footer', {
-		//	templateUrl: 'views/footer.html'
-		//})
-		//.when('/notify', {
-		//	templateUrl: 'views/notify.html'
-		//})
-		//.when('/require', {
-		//	templateUrl: 'views/require.html'
-		//})
+
 		.when('/top-menu', {
-			templateUrl: 'views/top-menu.html'
+			templateUrl: 'top-menu.html'
 		})
 		.when('/two-menu-1', {
-			templateUrl: 'views/two-menu-1.html'
+			templateUrl: 'two-menu-1.html'
 		})
 		.when('/two-menu-2', {
-			templateUrl: 'views/two-menu-2.html'
+			templateUrl: 'two-menu-2.html'
 		});
 });
 

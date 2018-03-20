@@ -39,15 +39,12 @@
     }
 </style>
 
-	<div class = "flex-container" ng-app="myApp" ng-controller="errorsCtrl">
-   <div class = "row" >
-   <div class="col-sm-10">
-
-		<div class="main-container ace-save-state" id="main-container">
-			
-
-
-			<!-- /section:basics/sidebar -->
+	<div class = "flex-container" ng-app="myApp" >
+    <div class = "row" >
+    <div class="col-sm-10">
+	<div class="main-container ace-save-state" id="main-container">
+	
+	<!-- /section:basics/sidebar -->
 			<div class="main-content">
 				<div class="main-content-inner">
 					<!-- #section:basics/content.breadcrumbs -->
@@ -178,30 +175,33 @@
 									<div class="well">
 										<h1 class="grey lighter smaller">
 											<span class="blue bigger-125">
-												<i class="{{headIcon}}"></i>
-												{{code}}
+												<i class="ace-icon fa fa-random"></i>
+												500
 											</span>
-											{{headMsg}}
+											Something Went Wrong
 										</h1>
 
 										<hr />
 										<h3 class="lighter smaller">
-											{{paragraph}}
-											<i class="{{btnIcon}}"></i>
-											{{btnPlace}}
+											But we are working
+											<i class="ace-icon fa fa-wrench icon-animated-wrench bigger-125"></i>
+											on it!
 										</h3>
 
 										<div class="space"></div>
 
 										<div>
-											<h4 class="lighter smaller">{{sub_head}}</h4>
+											<h4 class="lighter smaller">Meanwhile, try one of the following:</h4>
 
 											<ul class="list-unstyled spaced inline bigger-110 margin-15">
-											
+												<li>
+													<i class="ace-icon fa fa-hand-o-right blue"></i>
+													Read the faq
+												</li>
 
-												<li ng-repeat="raghu in sub_head_loop">
-													<i class="{{raghu.icon}}"></i>
-													{{raghu.name}}
+												<li>
+													<i class="ace-icon fa fa-hand-o-right blue"></i>
+													Give us more info on how this specific error occurred!
 												</li>
 											</ul>
 										</div>
@@ -211,13 +211,13 @@
 
 										<div class="center">
 											<a href="javascript:history.back()" class="btn btn-grey">
-												<i class="{{btn1Icon}}"></i>
-												{{btn1Name}}
+												<i class="ace-icon fa fa-arrow-left"></i>
+												Go Back
 											</a>
 
 											<a href="#" class="btn btn-primary">
-												<i class="{{btn2Icon}}"></i>
-												{{btn2Name}}
+												<i class="ace-icon fa fa-tachometer"></i>
+												Dashboard
 											</a>
 										</div>
 									</div>
@@ -231,21 +231,15 @@
 					</div><!-- /.page-content -->
 				</div>
 			</div><!-- /.main-content -->
-
-		
-		<!-- basic scripts -->
+			
+</div>
+</div>
+</div>
+</div>
 
 		<!--[if !IE]> -->
 		<script src="components/jquery/dist/jquery.js"></script>
 
-		<!-- <![endif]-->
-
-		<!--[if IE]>
-<script src="components/jquery.1x/dist/jquery.js"></script>
-<![endif]-->
-		<script type="text/javascript">
-			if('ontouchstart' in document.documentElement) document.write("<script src='components/_mod/jquery.mobile.custom/jquery.mobile.custom.js'>"+"<"+"/script>");
-		</script>
 		<script src="components/bootstrap/dist/js/bootstrap.js"></script>
 
 		<!-- page specific plugin scripts -->
