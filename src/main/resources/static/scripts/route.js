@@ -18,10 +18,10 @@ myApp.config(function($routeProvider) {
 			templateUrl: 'content-slider.html'
 		})
 		.when('/jquery-ui', {
-			templateUrl: 'views/jquery-ui.html'
+			templateUrl: 'jquery-ui.html'
         })
 		.when('/jqgrid', {
-			templateUrl: 'views/jqgrid.html'
+			templateUrl: 'jqgrid.html'
         
 		})
 		.when('/form-elements', {
@@ -39,7 +39,7 @@ myApp.config(function($routeProvider) {
 			templateUrl: 'dropzone.html'
 		})
 		.when('/widgets', {
-			templateUrl: 'views/widgets.html'
+			templateUrl: 'widgets.html'
 		})
 		.when('/calendar', {
 			templateUrl: 'calendar.html'
@@ -48,7 +48,7 @@ myApp.config(function($routeProvider) {
 			templateUrl: 'inbox.html'
 		})
 		.when('/invoice', {
-			templateUrl: 'views/invoice.html'
+			templateUrl: 'invoice.html'
 		})
 		.when('/faq', {
 			templateUrl: 'faq.html'
@@ -70,7 +70,7 @@ myApp.config(function($routeProvider) {
 		})
 		
 		.when('/gallery', {
-			templateUrl: 'views/gallery.html'
+			templateUrl: 'gallery.html'
         })
 		
 		.when('/nestable-list', {
@@ -105,7 +105,7 @@ myApp.config(function($routeProvider) {
 		})
 
 		.when('/grid', {
-			templateUrl: 'views/grid.html'
+			templateUrl: 'grid.html'
 		})
 		.when('/menu', {
 			templateUrl: 'views/menu.html'

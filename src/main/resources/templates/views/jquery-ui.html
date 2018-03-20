@@ -39,20 +39,23 @@
 
     }
 </style>
-	<div class = "flex-container" ng-app="myApp" ng-controller="jquiCtrl">
+	<div class = "flex-container" ng-app="myApp">
    <div class = "row" >
    <div class="col-sm-10">
 
 	
-	<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+<div class="main-content">
+				<div class="main-content-inner">
+					<!-- #section:basics/content.breadcrumbs -->
+					<div class="breadcrumbs ace-save-state" id="breadcrumbs">
 						<ul class="breadcrumb">
 							<li>
 								<i class="ace-icon fa fa-home home-icon"></i>
-								<a href="">Home</a>
+								<a href="#">Home</a>
 							</li>
 
 							<li>
-								<a href="">UI &amp; Elements</a>
+								<a href="#">UI &amp; Elements</a>
 							</li>
 							<li class="active">jQuery UI</li>
 						</ul><!-- /.breadcrumb -->
@@ -69,7 +72,7 @@
 
 						<!-- /section:basics/content.searchbox -->
 					</div>
-	
+
 					<!-- /section:basics/content.breadcrumbs -->
 					<div class="page-content">
 						<!-- #section:settings.box -->
@@ -164,10 +167,10 @@
 						<!-- /section:settings.box -->
 						<div class="page-header">
 							<h1>
-								{{bname}}
+								jQuery UI
 								<small>
 									<i class="ace-icon fa fa-angle-double-right"></i>
-									{{b1name}}
+									Restyling jQuery UI Widgets and Elements
 								</small>
 							</h1>
 						</div><!-- /.page-header -->
@@ -176,41 +179,31 @@
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
 								<div class="row">
-								
-								<!-- .................................. -->
 									<div class="col-sm-6">
-									<span ng-repeat="cpg in box1Contents"> 
-										
-										<h3 class="{{cpg.style}}">
-											<i class="{{cpg.icon}}"></i>
-											{{cpg.data}}
-										</h3>	
-										</span>
-									
+										<h3 class="header blue lighter smaller">
+											<i class="ace-icon fa fa-calendar-o smaller-90"></i>
+											Datepicker
+										</h3>
+
 										<div class="row">
 											<div class="col-xs-6">
-											<span ng-repeat="cpg in box1Content">
 												<div class="input-group input-group-sm">
-												 
 													<input type="text" id="datepicker" class="form-control" />
-													<a class="{{cpg.style}}">
-														<i class="{{cpg.icon}}"></i></a>
-													
-												</div></span>
+													<span class="input-group-addon">
+														<i class="ace-icon fa fa-calendar"></i>
+													</span>
+												</div>
 											</div>
 										</div>
 									</div><!-- ./span -->
-						<!-- .................................. -->
+
 									<div class="col-sm-6">
-									
-									<span ng-repeat="cpg in box2Contents">
-										<h3 class="{{cpg.style}}">
-											<i class="{{cpg.icon}}"></i>
-											{{cpg.data}}
+										<h3 class="header blue lighter smaller">
+											<i class="ace-icon fa fa-list-alt smaller-90"></i>
+											Dialogs
 										</h3>
-										</span>
-										<a href="" id="id-btn-dialog2" class="btn btn-info btn-sm">Confirm Dialog</a>
-										<a href="" id="id-btn-dialog1" class="btn btn-purple btn-sm">Modal Dialog</a>
+										<a href="#" id="id-btn-dialog2" class="btn btn-info btn-sm">Confirm Dialog</a>
+										<a href="#" id="id-btn-dialog1" class="btn btn-purple btn-sm">Modal Dialog</a>
 
 										<div id="dialog-message" class="hide">
 											<p>
@@ -237,7 +230,6 @@
 												Are you sure?
 											</p>
 										</div><!-- #dialog-confirm -->
-										
 									</div><!-- ./span -->
 								</div><!-- ./row -->
 
@@ -245,13 +237,11 @@
 
 								<div class="row">
 									<div class="col-sm-6">
-									
-									<span ng-repeat="cpg in box3Contents">
-										<h3 class="{{cpg.style}}">
-											<i class="{{cpg.icon}}"></i>
-											{{cpg.data}}
+										<h3 class="header blue lighter smaller">
+											<i class="ace-icon fa fa-terminal smaller-90"></i>
+											Autocomplete
 										</h3>
-										</span>
+
 										<div class="row">
 											<div class="col-sm-8 col-md-7">
 												<input id="tags" type="text" class="form-control" />
@@ -261,34 +251,30 @@
 											</div>
 										</div>
 
-										
 										<div class="row">
 											<div class="col-xs-12">
-											<span ng-repeat="cpg in box3Content">
-												<h3 class="{{cpg.style}}">
-													<i class="{{cpg.icon}}"></i>
-													{{cpg.data}}
+												<h3 class="header blue lighter smaller">
+													<i class="ace-icon fa fa-info smaller-90"></i>
+													Tooltip
 												</h3>
-											</span>
-											
-											
+
 												<div class="bigger-110">
 													<p>
-														<a class="grey" id="show-option" href="" title="slide down on show">
+														<a class="grey" id="show-option" href="#" title="slide down on show">
 															<i class="ace-icon fa fa-hand-o-right"></i>
 															slide down on show
 														</a>
 													</p>
 
 													<p>
-														<a class="blue" id="hide-option" href="" title="explode on hide">
+														<a class="blue" id="hide-option" href="#" title="explode on hide">
 															<i class="ace-icon fa fa-hand-o-right"></i>
 															explode on hide
 														</a>
 													</p>
 
 													<p>
-														<a class="pink" id="open-event" href="" title="move down on show">
+														<a class="pink" id="open-event" href="#" title="move down on show">
 															<i class="ace-icon fa fa-hand-o-right"></i>
 															move down on show
 														</a>
@@ -296,34 +282,54 @@
 												</div>
 											</div>
 										</div><!-- ./row -->
-										
 									</div><!-- ./col -->
 
 									<div class="col-sm-6">
-									<span ng-repeat="cpg in box4Contents">
-										<h3 class="{{cpg.style}}">
-											<i class="{{cpg.icon}}"></i>
-											{{cpg.data}}
+										<h3 class="header blue lighter smaller">
+											<i class="ace-icon fa fa-bars smaller-90"></i>
+											Menu
 										</h3>
-										</span>
+
 										<ul id="menu">
-										<span ng-repeat="cpg in box4Content">
-										<li class="{{cpg.style}}">  {{cpg.data}}</li>
-										 </span>
+											<li class="ui-state-disabled">Aberdeen</li>
+											<li>Ada</li>
+											<li>Adamsville</li>
+											<li>Addyston</li>
 
 											<li>
 												Delphi
 												<ul>
-												<span ng-repeat="cpg in box4Cont">
-													<li class="{{cpg.style}}">{{cpg.data}}</li>
-													
-													</span>
+													<li class="ui-state-disabled">Ada</li>
+													<li>Saarland</li>
+													<li>Salzburg</li>
 												</ul>
 											</li>
-											<span ng-repeat="cpg in box4Conts">
-											<li>{{cpg.data}}</li>
-											</span>
-											
+											<li>Saarland</li>
+
+											<li>
+												Salzburg
+												<ul>
+													<li>
+														Delphi
+														<ul>
+															<li>Ada</li>
+															<li>Saarland</li>
+															<li>Salzburg</li>
+														</ul>
+													</li>
+
+													<li>
+														Delphi
+														<ul>
+															<li>Ada</li>
+															<li>Saarland</li>
+															<li>Salzburg</li>
+														</ul>
+													</li>
+													<li>Perch</li>
+												</ul>
+											</li>
+											<li class="ui-state-disabled">Amesville</li>
 										</ul>
 									</div><!-- ./col -->
 								</div><!-- ./row -->
@@ -332,30 +338,26 @@
 
 								<div class="row">
 									<div class="col-sm-6">
-									
-									<span ng-repeat="cpg in box5Contents">
-										<h3 class="{{cpg.style}}">
-											<i class="{{cpg.icon}}"></i>
-											{{cpg.data}}
+										<h3 class="header blue lighter smaller">
+											<i class="ace-icon fa fa-retweet smaller-90"></i>
+											Spinner
 										</h3>
 
 										<input id="spinner" name="value" type="text" />
-									</div>
-									</span>
-									<!-- ./span -->
+									</div><!-- ./span -->
 
 									<div class="col-sm-6">
-									<span ng-repeat="cpg in box6Contents">
-										<h3 class="{{cpg.style}}">
-											<i class="{{cpg.icon}}"></i>
-											{{cpg.data}}
+										<h3 class="header blue lighter smaller">
+											<i class="ace-icon fa fa-arrows-h smaller-90"></i>
+											Slider
 										</h3>
 
 										<p>
-										<a href="">{{cpg.datas}}</a>
-											
+											Please see
+											<a href="form-elements.html">form elements page</a>
+											for more slider examples.
 										</p>
-										</span>
+
 										<div class="space-4"></div>
 
 										<div id="slider"></div>
@@ -366,17 +368,11 @@
 
 								<div class="row">
 									<div class="col-sm-6">
-									<span ng-repeat="cpg in box7Contents">
-										<h3 class="{{cpg.style}}">
-											<i class="{{cpg.icon}}"></i>
-											{{cpg.data}}
+										<h3 class="header blue lighter smaller">
+											<i class="ace-icon fa fa-list smaller-90"></i>
+											Sortable Accordion
 										</h3>
-										</span>
-										
-										
-										
-										
-	<!--xxxxxxxxxxxx ask to harish xxxxxxxxxxxxxxxx -->
+
 										<div id="accordion" class="accordion-style2">
 											<div class="group">
 												<h3 class="accordion-header">Section 1</h3>
@@ -425,22 +421,16 @@
 										</div><!-- #accordion -->
 									</div><!-- ./span -->
 
-									
-				<!--xxxxxxxxxxxx ask to harish xxxxxxxxxxxxxxxx -->		
-									
-									
-									
 									<div class="col-sm-6">
-									<span ng-repeat="cpg in box8Contents">
-										<h3 class="{{cpg.style}}">
-											<i class="{{cpg.icon}}"></i>
-											{{cpg.data}}
+										<h3 class="header blue lighter smaller">
+											<i class="ace-icon fa fa-folder-o smaller-90"></i>
+											Tabs
 										</h3>
 
 										<div id="tabs">
 											<ul>
 												<li>
-													<a href="tabs-1">Nunc tincidunt</a>
+													<a href="#tabs-1">Nunc tincidunt</a>
 												</li>
 
 												<li>
@@ -466,57 +456,45 @@
 										</div>
 									</div><!-- ./col -->
 								</div><!-- ./row -->
-							<!--xxxxxxxxxxxx ask to harish xxxxxxxxxxxxxxxx -->
-							
-							
-							
-							
+
 								<div class="space-12"></div>
 
 								<div class="row">
 									<div class="col-sm-6">
-									<span ng-repeat="cpg in box9Contents">
-										<h3 class="{{cpg.style}}">
-											<i class="{{cpg.icon}}"></i>
-											{{cpg.data}}
+										<h3 class="header blue lighter smaller">
+											<i class="ace-icon fa fa-spinner"></i>
+											Progressbar
 										</h3>
-										</span>
+
 										<div id="progressbar"></div>
-										
 									</div><!-- ./col -->
 
 									<div class="col-sm-6">
-									<div ng-repeat="cpg in box10Contents">
-										<h3 class="{{cpg.style}}">
-											<i class="{{cpg.icon}}"></i>
-											 {{cpg.data}} 
+										<h3 class="header blue lighter smaller">
+											<i class="ace-icon fa fa-spinner"></i>
+											Selectmenu
 										</h3>
 										<label for="number" class="block">Select a number</label>
 
 										<select name="number" id="number">
-										 
-											 <option>1</option>
-											<option>2</option>
+											<option>1</option>
+											<option selected="selected">2</option>
 											<option>3</option>
 											<option>4</option>
-											<option>5	</option>
-											 </div>	
+											<option>5</option>
 										</select>
-									
 									</div>
 								</div><!-- ./row -->
 
 								<!-- PAGE CONTENT ENDS -->
 							</div><!-- /.col -->
 						</div><!-- /.row -->
-					</div>
-					</div></div>
+					</div><!-- /.page-content -->
+				</div>
+			</div><!-- /.main-content -->
 					
-					</div>
-					<!-- /.page-content -->
-					<script type="text/javascript">
-			if('ontouchstart' in document.documentElement) document.write("<script src='../components/_mod/jquery.mobile.custom/jquery.mobile.custom.js'>"+"<"+"/script>");
-		</script>
+					</div></div></div>
+	
 		<script src="components/bootstrap/dist/js/bootstrap.js"></script>
 
 		<!-- page specific plugin scripts -->
@@ -584,7 +562,7 @@
 							$.widget("ui.dialog", $.extend({}, $.ui.dialog.prototype, {
 								_title: function(title) {
 									var $title = this.options.title || '&nbsp;'
-									if( ("title_html" in this.options) && this.options.title_html == true )
+									if( ("title_html" in this.options) &amp;&amp; this.options.title_html == true )
 										title.html($title);
 									else title.text($title);
 								}

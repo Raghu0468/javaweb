@@ -110,4 +110,35 @@ public class WebController {
     public String wysiwygpage(){
         return "views/wysiwyg";
     }
+	
+	@RequestMapping(value="gallery",method = RequestMethod.GET)
+    public String gallerypage(){
+        return "views/gallery";
+    }
+	
+	@RequestMapping(value="widgets",method = RequestMethod.GET)
+    public String widgetspage(){
+        return "views/widgets";
+    }
+	
+	@RequestMapping(value="jqgrid",method = RequestMethod.GET)
+    public String jqgridpage(){
+        return "views/jqgrid";
+    }
+	
+	@RequestMapping(value="jquery-ui",method = RequestMethod.GET)
+    public String jqueryuipage(){
+        return "views/jquery-ui";
+    }
+	
+	@RequestMapping(value="invoice",method = RequestMethod.GET)
+    public String invoicepage(){
+        return "views/invoice";
+    }
+	
+	@RequestMapping(value="grid",method = RequestMethod.GET)
+    public String gridpage(){
+        return "views/grid";
+    }
+	
 }
