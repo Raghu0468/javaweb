@@ -1,3 +1,6 @@
+	
+	<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 	<!-- bootstrap & fontawesome -->
 		<link rel="stylesheet" href="assets/css/bootstrap.css" />
 		<link rel="stylesheet" href="components/font-awesome/css/font-awesome.css" />
@@ -14,7 +17,7 @@
 		<link rel="stylesheet" href="assets/css/ace-rtl.css" />
 	
 		<script src="assets/js/ace-extra.js"></script>
-
+	
 	<style>
     .container {
         width: 103%!important;        
@@ -23,11 +26,12 @@
 </style>
 	<!-- <body class="no-skin"> -->
 
-	<div class = "container" ng-app="myApp">
+	<div class = "container" ng-app="myApp" ng-controller="testCtrl">
    <div class = "row" >
    <div class="col-sm-10">
-   
-   <!-- /section:basics/sidebar -->
+		
+		<div class="main-container ace-save-state" id="main-container">
+			
 			<div class="main-content">
 				<div class="main-content-inner">
 					<!-- #section:basics/content.breadcrumbs -->
@@ -35,7 +39,7 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="ace-icon fa fa-home home-icon"></i>
-								<a href="#">Home</a>
+								<a href="">Home ${dynamicJson.msg}</a>
 							</li>
 							<li class="active">Dashboard</li>
 						</ul><!-- /.breadcrumb -->
@@ -158,6 +162,9 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
+								
+								
+								
 								<div class="alert alert-block alert-success">
 									<button type="button" class="close" data-dismiss="alert">
 										<i class="ace-icon fa fa-times"></i>
@@ -172,124 +179,57 @@
 									</strong>,
 	the lightweight, feature-rich and easy to use admin template.
 								</div>
+								
+								
+								
 
 								<div class="row">
 									<div class="space-6"></div>
 
 									<div class="col-sm-7 infobox-container">
 										<!-- #section:pages/dashboard.infobox -->
-										<div class="infobox infobox-green">
+										<span  ng-repeat="x in boxes">&{dynamicJson.x}
+										<div class="infobox infobox-&{dynamicJson.x.color}">
 											<div class="infobox-icon">
-												<i class="ace-icon fa fa-comments"></i>
+												<i class="ace-icon &{dynamicJson.x.icon}"></i>
 											</div>
 
 											<div class="infobox-data">
-												<span class="infobox-data-number">32</span>
-												<div class="infobox-content">comments + 2 reviews</div>
+												<span class="infobox-data-number">${dynamicJson.x.number}</span>
+												<div class="infobox-content">${dynamicJson.x.content}</div>
 											</div>
 
 											<!-- #section:pages/dashboard.infobox.stat -->
-											<div class="stat stat-success">8%</div>
+											<div class="stat stat-success">${dynamicJson.x.stat-success}</div>
 
 											<!-- /section:pages/dashboard.infobox.stat -->
 										</div>
+										</span>
 
-										<div class="infobox infobox-blue">
-											<div class="infobox-icon">
-												<i class="ace-icon fa fa-twitter"></i>
-											</div>
 
-											<div class="infobox-data">
-												<span class="infobox-data-number">11</span>
-												<div class="infobox-content">new followers</div>
-											</div>
-
-											<div class="badge badge-success">
-												+32%
-												<i class="ace-icon fa fa-arrow-up"></i>
-											</div>
-										</div>
-
-										<div class="infobox infobox-pink">
-											<div class="infobox-icon">
-												<i class="ace-icon fa fa-shopping-cart"></i>
-											</div>
-
-											<div class="infobox-data">
-												<span class="infobox-data-number">8</span>
-												<div class="infobox-content">new orders</div>
-											</div>
-											<div class="stat stat-important">4%</div>
-										</div>
-
-										<div class="infobox infobox-red">
-											<div class="infobox-icon">
-												<i class="ace-icon fa fa-flask"></i>
-											</div>
-
-											<div class="infobox-data">
-												<span class="infobox-data-number">7</span>
-												<div class="infobox-content">experiments</div>
-											</div>
-										</div>
-
-										<div class="infobox infobox-orange2">
-											<!-- #section:pages/dashboard.infobox.sparkline -->
-											<div class="infobox-chart">
-												<span class="sparkline" data-values="196,128,202,177,154,94,100,170,224"></span>
-											</div>
-
-											<!-- /section:pages/dashboard.infobox.sparkline -->
-											<div class="infobox-data">
-												<span class="infobox-data-number">6,251</span>
-												<div class="infobox-content">pageviews</div>
-											</div>
-
-											<div class="badge badge-success">
-												7.2%
-												<i class="ace-icon fa fa-arrow-up"></i>
-											</div>
-										</div>
-
-										<div class="infobox infobox-blue2">
-											<div class="infobox-progress">
-												<!-- #section:pages/dashboard.infobox.easypiechart -->
-												<div class="easy-pie-chart percentage" data-percent="42" data-size="46">
-													<span class="percent">42</span>%
-												</div>
-
-												<!-- /section:pages/dashboard.infobox.easypiechart -->
-											</div>
-
-											<div class="infobox-data">
-												<span class="infobox-text">traffic used</span>
-
-												<div class="infobox-content">
-													<span class="bigger-110">~</span>
-													58GB remaining
-												</div>
-											</div>
-										</div>
 
 										<!-- /section:pages/dashboard.infobox -->
 										<div class="space-6"></div>
 
 										<!-- #section:pages/dashboard.infobox.dark -->
+										<span ng-repeat="com in completion">${dynamicJson.com.0}
 										<div class="infobox infobox-green infobox-small infobox-dark">
 											<div class="infobox-progress">
 												<!-- #section:pages/dashboard.infobox.easypiechart -->
 												<div class="easy-pie-chart percentage" data-percent="61" data-size="39">
-													<span class="percent">61</span>%
+													<span class="percent">${dynamicJson.com.progress}</span>%
 												</div>
 
 												<!-- /section:pages/dashboard.infobox.easypiechart -->
 											</div>
 
 											<div class="infobox-data">
-												<div class="infobox-content">Task</div>
-												<div class="infobox-content">Completion</div>
+												<div class="infobox-content">${dynamicJson.com.content}</div>
+												<div class="infobox-content"></div>
 											</div>
 										</div>
+										</span>
+										
 
 										<div class="infobox infobox-blue infobox-small infobox-dark">
 											<!-- #section:pages/dashboard.infobox.sparkline -->
@@ -337,28 +277,28 @@
 
 														<ul class="dropdown-menu dropdown-menu-right dropdown-125 dropdown-lighter dropdown-close dropdown-caret">
 															<li class="active">
-																<a href="#" class="blue">
+																<a href="" class="blue">
 																	<i class="ace-icon fa fa-caret-right bigger-110">&nbsp;</i>
 																	This Week
 																</a>
 															</li>
 
 															<li>
-																<a href="#">
+																<a href="">
 																	<i class="ace-icon fa fa-caret-right bigger-110 invisible">&nbsp;</i>
 																	Last Week
 																</a>
 															</li>
 
 															<li>
-																<a href="#">
+																<a href="">
 																	<i class="ace-icon fa fa-caret-right bigger-110 invisible">&nbsp;</i>
 																	This Month
 																</a>
 															</li>
 
 															<li>
-																<a href="#">
+																<a href="">
 																	<i class="ace-icon fa fa-caret-right bigger-110 invisible">&nbsp;</i>
 																	Last Month
 																</a>
@@ -424,7 +364,7 @@
 												</h4>
 
 												<div class="widget-toolbar">
-													<a href="#" data-action="collapse">
+													<a href="" data-action="collapse">
 														<i class="ace-icon fa fa-chevron-up"></i>
 													</a>
 												</div>
@@ -533,7 +473,7 @@
 												</h4>
 
 												<div class="widget-toolbar">
-													<a href="#" data-action="collapse">
+													<a href="" data-action="collapse">
 														<i class="ace-icon fa fa-chevron-up"></i>
 													</a>
 												</div>
@@ -561,15 +501,15 @@
 												<div class="widget-toolbar no-border">
 													<ul class="nav nav-tabs" id="recent-tab">
 														<li class="active">
-															<a data-toggle="tab" href="#task-tab">Tasks</a>
+															<a data-toggle="tab" href="task-tab">Tasks</a>
+														</li>
+																			
+														<li>
+															<a data-toggle="tab" href="member-tab">Members</a>
 														</li>
 
 														<li>
-															<a data-toggle="tab" href="#member-tab">Members</a>
-														</li>
-
-														<li>
-															<a data-toggle="tab" href="#comment-tab">Comments</a>
+															<a data-toggle="tab" href="comment-tab">Comments</a>
 														</li>
 													</ul>
 												</div>
@@ -605,19 +545,19 @@
 
 																	<!-- #section:custom/extra.action-buttons -->
 																	<div class="pull-right action-buttons">
-																		<a href="#" class="blue">
+																		<a href="" class="blue">
 																			<i class="ace-icon fa fa-pencil bigger-130"></i>
 																		</a>
 
 																		<span class="vbar"></span>
 
-																		<a href="#" class="red">
+																		<a href="" class="red">
 																			<i class="ace-icon fa fa-trash-o bigger-130"></i>
 																		</a>
 
 																		<span class="vbar"></span>
 
-																		<a href="#" class="green">
+																		<a href="" class="green">
 																			<i class="ace-icon fa fa-flag bigger-130"></i>
 																		</a>
 																	</div>
@@ -639,7 +579,7 @@
 
 																		<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-caret dropdown-close dropdown-menu-right">
 																			<li>
-																				<a href="#" class="tooltip-success" data-rel="tooltip" title="Mark&nbsp;as&nbsp;done">
+																				<a href="" class="tooltip-success" data-rel="tooltip" title="Mark&nbsp;as&nbsp;done">
 																					<span class="green">
 																						<i class="ace-icon fa fa-check bigger-110"></i>
 																					</span>
@@ -647,7 +587,7 @@
 																			</li>
 
 																			<li>
-																				<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+																				<a href="" class="tooltip-error" data-rel="tooltip" title="Delete">
 																					<span class="red">
 																						<i class="ace-icon fa fa-trash-o bigger-110"></i>
 																					</span>
@@ -696,12 +636,12 @@
 															<div class="clearfix">
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Bob Doe's avatar" src="../assets/avatars/user.jpg" />
+																		<img alt="Bob Doe's avatar" src="assets/avatars/user.jpg" />
 																	</div>
 
 																	<div class="body">
 																		<div class="name">
-																			<a href="#">Bob Doe</a>
+																			<a href="">Bob Doe</a>
 																		</div>
 
 																		<div class="time">
@@ -719,7 +659,7 @@
 
 																				<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
 																					<li>
-																						<a href="#" class="tooltip-success" data-rel="tooltip" title="Approve">
+																						<a href="" class="tooltip-success" data-rel="tooltip" title="Approve">
 																							<span class="green">
 																								<i class="ace-icon fa fa-check bigger-110"></i>
 																							</span>
@@ -727,7 +667,7 @@
 																					</li>
 
 																					<li>
-																						<a href="#" class="tooltip-warning" data-rel="tooltip" title="Reject">
+																						<a href="" class="tooltip-warning" data-rel="tooltip" title="Reject">
 																							<span class="orange">
 																								<i class="ace-icon fa fa-times bigger-110"></i>
 																							</span>
@@ -735,7 +675,7 @@
 																					</li>
 
 																					<li>
-																						<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+																						<a href="" class="tooltip-error" data-rel="tooltip" title="Delete">
 																							<span class="red">
 																								<i class="ace-icon fa fa-trash-o bigger-110"></i>
 																							</span>
@@ -749,12 +689,12 @@
 
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Joe Doe's avatar" src="../assets/avatars/avatar2.png" />
+																		<img alt="Joe Doe's avatar" src="assets/avatars/avatar2.png" />
 																	</div>
 
 																	<div class="body">
 																		<div class="name">
-																			<a href="#">Joe Doe</a>
+																			<a href="">Joe Doe</a>
 																		</div>
 
 																		<div class="time">
@@ -772,7 +712,7 @@
 
 																				<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
 																					<li>
-																						<a href="#" class="tooltip-success" data-rel="tooltip" title="Approve">
+																						<a href="" class="tooltip-success" data-rel="tooltip" title="Approve">
 																							<span class="green">
 																								<i class="ace-icon fa fa-check bigger-110"></i>
 																							</span>
@@ -780,7 +720,7 @@
 																					</li>
 
 																					<li>
-																						<a href="#" class="tooltip-warning" data-rel="tooltip" title="Reject">
+																						<a href="" class="tooltip-warning" data-rel="tooltip" title="Reject">
 																							<span class="orange">
 																								<i class="ace-icon fa fa-times bigger-110"></i>
 																							</span>
@@ -788,7 +728,7 @@
 																					</li>
 
 																					<li>
-																						<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+																						<a href="" class="tooltip-error" data-rel="tooltip" title="Delete">
 																							<span class="red">
 																								<i class="ace-icon fa fa-trash-o bigger-110"></i>
 																							</span>
@@ -802,12 +742,12 @@
 
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Jim Doe's avatar" src="../assets/avatars/avatar.png" />
+																		<img alt="Jim Doe's avatar" src="assets/avatars/avatar.png" />
 																	</div>
 
 																	<div class="body">
 																		<div class="name">
-																			<a href="#">Jim Doe</a>
+																			<a href="">Jim Doe</a>
 																		</div>
 
 																		<div class="time">
@@ -825,7 +765,7 @@
 
 																				<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
 																					<li>
-																						<a href="#" class="tooltip-success" data-rel="tooltip" title="Approve">
+																						<a href="" class="tooltip-success" data-rel="tooltip" title="Approve">
 																							<span class="green">
 																								<i class="ace-icon fa fa-check bigger-110"></i>
 																							</span>
@@ -833,7 +773,7 @@
 																					</li>
 
 																					<li>
-																						<a href="#" class="tooltip-warning" data-rel="tooltip" title="Reject">
+																						<a href="" class="tooltip-warning" data-rel="tooltip" title="Reject">
 																							<span class="orange">
 																								<i class="ace-icon fa fa-times bigger-110"></i>
 																							</span>
@@ -841,7 +781,7 @@
 																					</li>
 
 																					<li>
-																						<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+																						<a href="" class="tooltip-error" data-rel="tooltip" title="Delete">
 																							<span class="red">
 																								<i class="ace-icon fa fa-trash-o bigger-110"></i>
 																							</span>
@@ -855,12 +795,12 @@
 
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Alex Doe's avatar" src="../assets/avatars/avatar5.png" />
+																		<img alt="Alex Doe's avatar" src="assets/avatars/avatar5.png" />
 																	</div>
 
 																	<div class="body">
 																		<div class="name">
-																			<a href="#">Alex Doe</a>
+																			<a href="">Alex Doe</a>
 																		</div>
 
 																		<div class="time">
@@ -876,12 +816,12 @@
 
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Bob Doe's avatar" src="../assets/avatars/avatar2.png" />
+																		<img alt="Bob Doe's avatar" src="assets/avatars/avatar2.png" />
 																	</div>
 
 																	<div class="body">
 																		<div class="name">
-																			<a href="#">Bob Doe</a>
+																			<a href="">Bob Doe</a>
 																		</div>
 
 																		<div class="time">
@@ -897,12 +837,12 @@
 
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Susan's avatar" src="../assets/avatars/avatar3.png" />
+																		<img alt="Susan's avatar" src="assets/avatars/avatar3.png" />
 																	</div>
 
 																	<div class="body">
 																		<div class="name">
-																			<a href="#">Susan</a>
+																			<a href="">Susan</a>
 																		</div>
 
 																		<div class="time">
@@ -918,12 +858,12 @@
 
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Phil Doe's avatar" src="../assets/avatars/avatar4.png" />
+																		<img alt="Phil Doe's avatar" src="assets/avatars/avatar4.png" />
 																	</div>
 
 																	<div class="body">
 																		<div class="name">
-																			<a href="#">Phil Doe</a>
+																			<a href="">Phil Doe</a>
 																		</div>
 
 																		<div class="time">
@@ -939,12 +879,12 @@
 
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Alexa Doe's avatar" src="../assets/avatars/avatar1.png" />
+																		<img alt="Alexa Doe's avatar" src="assets/avatars/avatar1.png" />
 																	</div>
 
 																	<div class="body">
 																		<div class="name">
-																			<a href="#">Alexa Doe</a>
+																			<a href="">Alexa Doe</a>
 																		</div>
 
 																		<div class="time">
@@ -965,7 +905,7 @@
 																<i class="ace-icon fa fa-users fa-2x green middle"></i>
 
 																&nbsp;
-																<a href="#" class="btn btn-sm btn-white btn-info">
+																<a href="" class="btn btn-sm btn-white btn-info">
 																	See all members &nbsp;
 																	<i class="ace-icon fa fa-arrow-right"></i>
 																</a>
@@ -981,12 +921,12 @@
 															<div class="comments">
 																<div class="itemdiv commentdiv">
 																	<div class="user">
-																		<img alt="Bob Doe's Avatar" src="../assets/avatars/avatar.png" />
+																		<img alt="Bob Doe's Avatar" src="assets/avatars/avatar.png" />
 																	</div>
 
 																	<div class="body">
 																		<div class="name">
-																			<a href="#">Bob Doe</a>
+																			<a href="">Bob Doe</a>
 																		</div>
 
 																		<div class="time">
@@ -1008,7 +948,7 @@
 
 																			<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
 																				<li>
-																					<a href="#" class="tooltip-success" data-rel="tooltip" title="Approve">
+																					<a href="" class="tooltip-success" data-rel="tooltip" title="Approve">
 																						<span class="green">
 																							<i class="ace-icon fa fa-check bigger-110"></i>
 																						</span>
@@ -1016,7 +956,7 @@
 																				</li>
 
 																				<li>
-																					<a href="#" class="tooltip-warning" data-rel="tooltip" title="Reject">
+																					<a href="" class="tooltip-warning" data-rel="tooltip" title="Reject">
 																						<span class="orange">
 																							<i class="ace-icon fa fa-times bigger-110"></i>
 																						</span>
@@ -1024,7 +964,7 @@
 																				</li>
 
 																				<li>
-																					<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+																					<a href="" class="tooltip-error" data-rel="tooltip" title="Delete">
 																						<span class="red">
 																							<i class="ace-icon fa fa-trash-o bigger-110"></i>
 																						</span>
@@ -1037,12 +977,12 @@
 
 																<div class="itemdiv commentdiv">
 																	<div class="user">
-																		<img alt="Jennifer's Avatar" src="../assets/avatars/avatar1.png" />
+																		<img alt="Jennifer's Avatar" src="assets/avatars/avatar1.png" />
 																	</div>
 
 																	<div class="body">
 																		<div class="name">
-																			<a href="#">Jennifer</a>
+																			<a href="">Jennifer</a>
 																		</div>
 
 																		<div class="time">
@@ -1058,11 +998,11 @@
 
 																	<div class="tools">
 																		<div class="action-buttons bigger-125">
-																			<a href="#">
+																			<a href="">
 																				<i class="ace-icon fa fa-pencil blue"></i>
 																			</a>
 
-																			<a href="#">
+																			<a href="">
 																				<i class="ace-icon fa fa-trash-o red"></i>
 																			</a>
 																		</div>
@@ -1071,12 +1011,12 @@
 
 																<div class="itemdiv commentdiv">
 																	<div class="user">
-																		<img alt="Joe's Avatar" src="../assets/avatars/avatar2.png" />
+																		<img alt="Joe's Avatar" src="assets/avatars/avatar2.png" />
 																	</div>
 
 																	<div class="body">
 																		<div class="name">
-																			<a href="#">Joe</a>
+																			<a href="">Joe</a>
 																		</div>
 
 																		<div class="time">
@@ -1092,11 +1032,11 @@
 
 																	<div class="tools">
 																		<div class="action-buttons bigger-125">
-																			<a href="#">
+																			<a href="">
 																				<i class="ace-icon fa fa-pencil blue"></i>
 																			</a>
 
-																			<a href="#">
+																			<a href="">
 																				<i class="ace-icon fa fa-trash-o red"></i>
 																			</a>
 																		</div>
@@ -1105,12 +1045,12 @@
 
 																<div class="itemdiv commentdiv">
 																	<div class="user">
-																		<img alt="Rita's Avatar" src="../assets/avatars/avatar3.png" />
+																		<img alt="Rita's Avatar" src="assets/avatars/avatar3.png" />
 																	</div>
 
 																	<div class="body">
 																		<div class="name">
-																			<a href="#">Rita</a>
+																			<a href="">Rita</a>
 																		</div>
 
 																		<div class="time">
@@ -1126,11 +1066,11 @@
 
 																	<div class="tools">
 																		<div class="action-buttons bigger-125">
-																			<a href="#">
+																			<a href="">
 																				<i class="ace-icon fa fa-pencil blue"></i>
 																			</a>
 
-																			<a href="#">
+																			<a href="">
 																				<i class="ace-icon fa fa-trash-o red"></i>
 																			</a>
 																		</div>
@@ -1144,7 +1084,7 @@
 																<i class="ace-icon fa fa-comments-o fa-2x green middle"></i>
 
 																&nbsp;
-																<a href="#" class="btn btn-sm btn-white btn-info">
+																<a href="" class="btn btn-sm btn-white btn-info">
 																	See all comments &nbsp;
 																	<i class="ace-icon fa fa-arrow-right"></i>
 																</a>
@@ -1175,7 +1115,7 @@
 													<div class="dialogs">
 														<div class="itemdiv dialogdiv">
 															<div class="user">
-																<img alt="Alexa's Avatar" src="../assets/avatars/avatar1.png" />
+																<img alt="Alexa's Avatar" src="assets/avatars/avatar1.png" />
 															</div>
 
 															<div class="body">
@@ -1185,12 +1125,12 @@
 																</div>
 
 																<div class="name">
-																	<a href="#">Alexa</a>
+																	<a href="">Alexa</a>
 																</div>
 																<div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis.</div>
 
 																<div class="tools">
-																	<a href="#" class="btn btn-minier btn-info">
+																	<a href="" class="btn btn-minier btn-info">
 																		<i class="icon-only ace-icon fa fa-share"></i>
 																	</a>
 																</div>
@@ -1199,7 +1139,7 @@
 
 														<div class="itemdiv dialogdiv">
 															<div class="user">
-																<img alt="John's Avatar" src="../assets/avatars/avatar.png" />
+																<img alt="John's Avatar" src="assets/avatars/avatar.png" />
 															</div>
 
 															<div class="body">
@@ -1209,12 +1149,12 @@
 																</div>
 
 																<div class="name">
-																	<a href="#">John</a>
+																	<a href="">John</a>
 																</div>
 																<div class="text">Raw denim you probably haven&#39;t heard of them jean shorts Austin.</div>
 
 																<div class="tools">
-																	<a href="#" class="btn btn-minier btn-info">
+																	<a href="" class="btn btn-minier btn-info">
 																		<i class="icon-only ace-icon fa fa-share"></i>
 																	</a>
 																</div>
@@ -1223,7 +1163,7 @@
 
 														<div class="itemdiv dialogdiv">
 															<div class="user">
-																<img alt="Bob's Avatar" src="../assets/avatars/user.jpg" />
+																<img alt="Bob's Avatar" src="assets/avatars/user.jpg" />
 															</div>
 
 															<div class="body">
@@ -1233,13 +1173,13 @@
 																</div>
 
 																<div class="name">
-																	<a href="#">Bob</a>
+																	<a href="">Bob</a>
 																	<span class="label label-info arrowed arrowed-in-right">admin</span>
 																</div>
 																<div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis.</div>
 
 																<div class="tools">
-																	<a href="#" class="btn btn-minier btn-info">
+																	<a href="" class="btn btn-minier btn-info">
 																		<i class="icon-only ace-icon fa fa-share"></i>
 																	</a>
 																</div>
@@ -1248,7 +1188,7 @@
 
 														<div class="itemdiv dialogdiv">
 															<div class="user">
-																<img alt="Jim's Avatar" src="../assets/avatars/avatar4.png" />
+																<img alt="Jim's Avatar" src="assets/avatars/avatar4.png" />
 															</div>
 
 															<div class="body">
@@ -1258,12 +1198,12 @@
 																</div>
 
 																<div class="name">
-																	<a href="#">Jim</a>
+																	<a href="">Jim</a>
 																</div>
 																<div class="text">Raw denim you probably haven&#39;t heard of them jean shorts Austin.</div>
 
 																<div class="tools">
-																	<a href="#" class="btn btn-minier btn-info">
+																	<a href="" class="btn btn-minier btn-info">
 																		<i class="icon-only ace-icon fa fa-share"></i>
 																	</a>
 																</div>
@@ -1272,7 +1212,7 @@
 
 														<div class="itemdiv dialogdiv">
 															<div class="user">
-																<img alt="Alexa's Avatar" src="../assets/avatars/avatar1.png" />
+																<img alt="Alexa's Avatar" src="assets/avatars/avatar1.png" />
 															</div>
 
 															<div class="body">
@@ -1282,12 +1222,12 @@
 																</div>
 
 																<div class="name">
-																	<a href="#">Alexa</a>
+																	<a href="">Alexa</a>
 																</div>
 																<div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
 
 																<div class="tools">
-																	<a href="#" class="btn btn-minier btn-info">
+																	<a href="" class="btn btn-minier btn-info">
 																		<i class="icon-only ace-icon fa fa-share"></i>
 																	</a>
 																</div>
@@ -1318,12 +1258,12 @@
 								<!-- PAGE CONTENT ENDS -->
 							</div><!-- /.col -->
 						</div><!-- /.row -->
-					</div><!-- /.page-content -->
+					</div>
+					</div></div></div>
+					<!-- /.page-content -->
 				</div>
-				
 			</div><!-- /.main-content -->
-		</div>
-	</div>
+	
 </div>
 
 		<script src="components/jquery/dist/jquery.js"></script>

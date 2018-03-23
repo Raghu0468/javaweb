@@ -4,7 +4,7 @@ myApp.config(function($routeProvider) {
 	$routeProvider
 
 	.when('/dashboard', {
-			templateUrl: 'dashboard.html'
+			templateUrl: 'dashboard.jsp'
 		})
 
 	.when('/elements', {
