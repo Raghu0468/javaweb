@@ -389,11 +389,27 @@
 							</div>
 							
 								</div>
+					<!-- /.page-content -->
 
+
+		<!-- basic scripts -->
+
+		<!--[if !IE]> -->
 		<script src="components/jquery/dist/jquery.js"></script>
 
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script src="components/jquery.1x/dist/jquery.js"></script>
+<![endif]-->
+		<script type="text/javascript">
+			if('ontouchstart' in document.documentElement) document.write("<script src='components/_mod/jquery.mobile.custom/jquery.mobile.custom.js'>"+"<"+"/script>");
+		</script>
 		<script src="components/bootstrap/dist/js/bootstrap.js"></script>
 
+		<!-- page specific plugin scripts -->
+
+		<!-- ace scripts -->
 		<script src="assets/js/src/elements.scroller.js"></script>
 		<script src="assets/js/src/elements.colorpicker.js"></script>
 		<script src="assets/js/src/elements.fileinput.js"></script>
@@ -417,3 +433,5 @@
 		<script src="assets/js/src/ace.settings-skin.js"></script>
 		<script src="assets/js/src/ace.widget-on-reload.js"></script>
 		<script src="assets/js/src/ace.searchbox-autocomplete.js"></script>
+
+		<!-- inline scripts related to this page -->

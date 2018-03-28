@@ -43,11 +43,18 @@
     }
 </style>
 
-	<div class = "flex-container" ng-app="myApp">
+	<div class = "flex-container" ng-app="myApp" ng-controller="buttonsCtrl">
    <div class = "row" >
    <div class="col-sm-10">
 	
-	
+
+
+		<div class="main-container ace-save-state" id="main-container">
+			
+
+			<!-- #section:basics/sidebar -->
+			
+
 			<!-- /section:basics/sidebar -->
 			<div class="main-content">
 				<div class="main-content-inner">
@@ -56,11 +63,11 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="ace-icon fa fa-home home-icon"></i>
-								<a href="#">Home</a>
+								<a href="">Home</a>
 							</li>
 
 							<li>
-								<a href="#">UI &amp; Elements</a>
+								<a href="">UI &amp; Elements</a>
 							</li>
 							<li class="active">Buttons &amp; Icons</li>
 						</ul><!-- /.breadcrumb -->
@@ -172,10 +179,10 @@
 						<!-- /section:settings.box -->
 						<div class="page-header">
 							<h1>
-								Buttons &amp; Icon
+								{{l1name}}
 								<small>
 									<i class="ace-icon fa fa-angle-double-right"></i>
-									Common Buttons &amp; Icons
+									{{l2name}}
 								</small>
 							</h1>
 						</div><!-- /.page-header -->
@@ -185,77 +192,44 @@
 								<!-- PAGE CONTENT BEGINS -->
 								<div class="row">
 									<div class="col-xs-12">
-										<h3 class="header smaller lighter green">Application Buttons</h3>
+										<h3 class="header smaller lighter green">{{bname}}</h3>
 
 										<!-- #section:elements.button.app -->
-										<p></p>
-										<a href="#" class="btn btn-default btn-app radius-4">
-											<i class="ace-icon fa fa-cog bigger-230"></i>
-											Default
-											<span class="badge badge-pink">+3</span>
+										
+										<span ng-repeat="cpg in box1Contents"> 
+										<a href="" class="btn btn-{{cpg.radius}}">
+											<i class="{{cpg.size}}"></i>
+											{{cpg.data}}
+											<!-- <span class="badge badge-pink">+3</span>  -->
+											<!-- <span class="badge badge-{{cpg.badge}}">+3</span>  -->
 										</a>
-
-										<a href="#" class="btn btn-app btn-primary no-radius">
+									
+										<!--  <a href="#" class="btn btn-app btn-primary no-radius">
 											<i class="ace-icon fa fa-pencil-square-o bigger-230"></i>
 											Edit
 											<span class="badge badge-warning badge-left">11</span>
 										</a>
-
-										<a href="#" class="btn btn-app btn-success">
-											<i class="ace-icon fa fa-refresh bigger-230"></i>
-											Reload
-										</a>
-
-										<button class="btn btn-app btn-warning">
-											<i class="ace-icon fa fa-undo bigger-230"></i>
-											Undo
-										</button>
-
-										<a href="#" class="btn btn-app btn-info btn-sm no-radius">
+											
+										
+										
+										<a href="" class="btn btn-app btn-info btn-sm no-radius">
 											<i class="ace-icon fa fa-envelope bigger-200"></i>
 											Mailbox
 											<span class="label label-inverse arrowed-in">6+</span>
 										</a>
-
-										<button class="btn btn-app btn-danger btn-sm">
-											<i class="ace-icon fa fa-trash-o bigger-200"></i>
-											Delete
-										</button>
-
-										<button class="btn btn-app btn-purple btn-sm">
-											<i class="ace-icon fa fa-cloud-upload bigger-200"></i>
-											Upload
-										</button>
-
-										<button class="btn btn-app btn-pink btn-sm">
-											<i class="ace-icon fa fa-share bigger-200"></i>
-											Share
-										</button>
-
-										<button class="btn btn-app btn-inverse btn-xs">
-											<i class="ace-icon fa fa-lock bigger-160"></i>
-											Lock
-										</button>
-
-										<button class="btn btn-app btn-grey btn-xs radius-4">
+									
+										
+										
+										 <button class="btn btn-app btn-grey btn-xs radius-4">
 											<i class="ace-icon fa fa-floppy-o bigger-160"></i>
 
 											Save
 											<span class="badge badge-transparent">
 												<i class="light-red ace-icon fa fa-asterisk"></i>
-											</span>
-										</button>
-
-										<button class="btn btn-app btn-light btn-xs">
-											<i class="ace-icon fa fa-print bigger-160"></i>
-											Print
-										</button>
-
-										<a href="#" class="btn btn-app btn-yellow btn-xs">
-											<i class="ace-icon fa fa-shopping-cart bigger-160"></i>
-											Shop
-										</a>
-
+											
+										</button> 
+										-->
+									</span>
 										<div class="btn-group">
 											<button class="btn btn-app btn-pink btn-xs">
 												<i class="ace-icon fa fa-share bigger-175"></i>
@@ -297,7 +271,7 @@
 								<div class="row">
 									<div class="col-sm-6" id="default-buttons">
 										<h3 class="row header smaller lighter purple">
-											<span class="col-sm-6"> Default Buttons </span><!-- /.col -->
+											<span class="col-sm-6"> {{b2name}} </span><!-- /.col -->
 
 											<span class="col-sm-6">
 												<label class="pull-right inline">
@@ -309,156 +283,121 @@
 											</span><!-- /.col -->
 										</h3><!-- /.row -->
 
+								
 										<!-- #section:elements.button -->
+									
 										<p>
-											<button class="btn">Default </button>
-											<button class="btn btn-primary">Primary</button>
-											<button class="btn btn-info">Info</button>
-											<button class="btn btn-success">Success</button>
+										<span ng-repeat="cpg in box2Contents"> 
+										<a href="" class="{{cpg.button}}">
+											{{cpg.data}}
+										 </a>	
+										</span>
+										</p>
+										
+										<p>
+										<span ng-repeat="cpg in box2Conten"> 
+										<a href="" class="{{cpg.buttons}}">
+											{{cpg.datas}}
+										 </a>	
+										</span>
+										</p>
+									<p>
+										<span ng-repeat="cpg in box2Content"> 
+										<a href="" class="{{cpg.buttons}}">
+											{{cpg.data}}
+										 </a>	
+										</span>
 										</p>
 
 										<p>
-											<button class="btn btn-warning">Warning</button>
-											<button class="btn btn-danger">Danger</button>
-											<button class="btn btn-inverse">Inverse</button>
-											<button class="btn btn-pink">Pink</button>
+										<span ng-repeat="cpg in box2data"> 
+										<a href="" class="{{cpg.buttons}}">
+											{{cpg.data}}
+										 </a>	
+										</span>
 										</p>
 
 										<p>
-											<button class="btn btn-purple">Purple</button>
-											<button class="btn btn-yellow">Yellow</button>
-											<button class="btn btn-grey">Grey</button>
-											<button class="btn btn-light">Light</button>
-											<button class="btn btn-link">Link</button>
-										</p>
-
-										<!-- /section:elements.button -->
-
-										<!-- #section:elements.button.white -->
-										<p>
-											<button type="button" class="btn btn-white">White</button>
-											<button type="button" class="btn btn-white btn-default">Default</button>
-											<button type="button" class="btn btn-white btn-primary">Primary</button>
-											<button type="button" class="btn btn-white btn-info">Info</button>
-											<button type="button" class="btn btn-white btn-success">Success</button>
-											<button type="button" class="btn btn-white btn-warning">Warning</button>
-										</p>
-
-										<p>
-											<button type="button" class="btn btn-white btn-danger btn-sm">Danger</button>
-											<button type="button" class="btn btn-white btn-yellow btn-sm">Yellow</button>
-											<button type="button" class="btn btn-white btn-pink btn-sm">Pink</button>
-											<button type="button" class="btn btn-white btn-purple btn-sm">Purple</button>
-											<button type="button" class="btn btn-white btn-inverse btn-sm">Inverse</button>
+										<span ng-repeat="cpg in box2datas"> 
+										<a href="" class="{{cpg.buttons}}">
+											{{cpg.data}}
+										 </a>	
+										</span>
 										</p>
 
 										<!-- /section:elements.button.white -->
-										<h3 class="header smaller lighter green">Button with Icons</h3>
+										<h3 class="header smaller lighter green">{{b3name}}</h3>
 
 										<p>
-											<button class="btn btn-white btn-info btn-bold">
-												<i class="ace-icon fa fa-floppy-o bigger-120 blue"></i>
-												Backup
-											</button>
-
-											<button class="btn btn-white btn-warning btn-bold">
-												<i class="ace-icon fa fa-trash-o bigger-120 orange"></i>
-												Delete
-											</button>
-
-											<button class="btn btn-white btn-default btn-round">
-												<i class="ace-icon fa fa-times red2"></i>
-												Cancel
-											</button>
+										<span ng-repeat="cpg in box3Contents"> 
+										<a href="" class="{{cpg.buttons}}">
+										<i class="{{cpg.size}}"></i>
+											{{cpg.data}}
+										 </a>	
+										</span>
 										</p>
 
 										<div class="hr hr-dotted hr-16"></div>
 
 										<p>
-											<button class="btn">
-												<i class="ace-icon fa fa-pencil align-top bigger-125"></i>
-												Default
-											</button>
-
-											<button class="btn btn-primary">
-												<i class="ace-icon fa fa-flask align-top bigger-125"></i>
-												Primary
-											</button>
-
-											<button class="btn btn-info">
-												Info
-												<i class="ace-icon fa fa-print  align-top bigger-125 icon-on-right"></i>
-											</button>
+										<span ng-repeat="cpg in box3Detail"> 
+										<a href="" class="{{cpg.buttons}}">
+										<i class="{{cpg.size}}"></i>
+											{{cpg.data}}
+										 </a>	
+										</span>
 										</p>
 
 										<p>
-											<button class="btn btn-lg btn-success">
-												<i class="ace-icon fa fa-check"></i>
-												Success
-											</button>
-
-											<button class="btn btn-sm btn-warning">
-												<i class="ace-icon fa fa-fire bigger-110"></i>
-												<span class="bigger-110 no-text-shadow">Warning</span>
-											</button>
-
-											<button class="btn btn-xs btn-danger">
-												<i class="ace-icon fa fa-bolt bigger-110"></i>
-
-												Danger
-												<i class="ace-icon fa fa-arrow-right icon-on-right"></i>
-											</button>
+										<span ng-repeat="cpg in box3Details"> 
+										<a href="" class="{{cpg.buttons}}">
+										<i class="{{cpg.size}}"></i>
+										{{cpg.data}}
+										<i class="{{cpg.icon}}"></i></a>
+										</span>
 										</p>
 
 										<p>
-											<button class="btn btn-info">
-												<i class="ace-icon fa fa-signal icon-only bigger-150"></i>
-											</button>
-
-											<button class="btn btn-warning btn-xs">
-												<i class="ace-icon fa fa-wrench  bigger-110 icon-only"></i>
-											</button>
-
-											<button class="btn btn-danger btn-sm">
-												<i class="ace-icon fa fa-reply icon-only"></i>
-											</button>
-
-											<button class="btn btn-grey btn-lg">
-												<i class="ace-icon fa fa-trash-o fa-2x icon-only"></i>
-											</button>
+										<span ng-repeat="cpg in box3Dataa"> 
+										<a href="" class="{{cpg.buttons}}">
+										<i class="{{cpg.size}}"></i></a>
+										</span>
 										</p>
 									</div><!-- /.col -->
 
 									<div class="col-sm-6">
-										<h3 class="header smaller lighter red">Button Sizing</h3>
+										<h3 class="header smaller lighter red">{{b4name}}</h3>
 
 										<p>
-											<button class="btn btn-minier btn-yellow">Minier</button>
-											<button class="btn btn-xs">Mini</button>
-											<button class="btn btn-sm btn-primary">Small</button>
-											<button class="btn btn-info">Default</button>
-											<button class="btn btn-lg btn-success">Large Size</button>
+										<span ng-repeat="cpg in box4Contents"> 
+										<a href="" class="{{cpg.buttons}}">
+									{{cpg.data}}</a>
+										</span>
+								
 										</p>
 
 										<p>
-											<button class="btn btn-warning btn-xlg">Larger Size</button>
-											<button class="btn btn-danger">Default</button>
-											<button class="btn btn-sm btn-inverse">Small</button>
-											<button class="btn btn-xs btn-pink">Pink</button>
-											<button class="btn btn-minier btn-purple">Purple</button>
+										<span ng-repeat="cpg in box4Content"> 
+										<a href="" class="{{cpg.buttons}}">
+									{{cpg.data}}</a>
+										</span>
 										</p>
-										<h3 class="header smaller lighter grey">Disabled Buttons</h3>
+										<h3 class="header smaller lighter grey">{{b5name}}</h3>
 
 										<p>
-											<button class="btn disabled">Default </button>
-											<button class="btn disabled btn-primary">Primary</button>
-											<button class="btn disabled btn-info">Info</button>
-											<button class="btn disabled btn-success">Success</button>
+										<span ng-repeat="cpg in box5Contents"> 
+										<a href="" class="{{cpg.buttons}}">
+										{{cpg.data}}</a>
+										</span>
+										
 										</p>
 
 										<hr />
 										<p>
-											<button class="btn btn-danger btn-block">Block Button</button>
+										<span ng-repeat="cpg in box5Conten"> 
+										<a href="" class="{{cpg.buttons}}">
+										{{cpg.data}}</a>
+										</span>
 										</p>
 									</div><!-- /.col -->
 								</div><!-- /.row -->
@@ -466,93 +405,89 @@
 								<hr />
 								<div class="row">
 									<div class="col-sm-6">
-										<h3 class="header smaller lighter blue">Button Groups</h3>
+										<h3 class="header smaller lighter blue">{{b6name}}</h3>
 
-										<p></p>
 										<div class="btn-group">
-											<button type="button" class="btn">1</button>
-											<button type="button" class="btn">2</button>
-											<button type="button" class="btn">3</button>
+										<span ng-repeat="cpg in box6Contents"> 
+										<a href="" class="{{cpg.buttons}}">
+										{{cpg.data}}</a>
+										</span>
 										</div>
 										
 
 										<p></p>
 										<div class="btn-group">
-											<button type="button" class="btn btn-white btn-sm btn-primary">Left</button>
-											<button type="button" class="btn btn-white btn-sm btn-primary">Middle</button>
-											<button type="button" class="btn btn-white btn-sm btn-primary">Right</button>
+										<span ng-repeat="cpg in box6Content"> 
+										<a href="" class="{{cpg.buttons}}">
+										{{cpg.data}}</a>
+										</span>
+										
 										</div>
 										
 
 										<p></p>
 										<div class="btn-toolbar">
 											<div class="btn-group">
-												<button class="btn btn-light">1</button>
-												<button class="btn btn-light">2</button>
-												<button class="btn btn-light">3</button>
-												<button class="btn btn-light">4</button>
+											<span ng-repeat="cpg in box6Contain"> 
+											<a href="" class="{{cpg.buttons}}">
+											{{cpg.data}}</a>
+											</span>
+												<!-- <button class="btn btn-light">1</button> -->
+												<!-- <button class="btn btn-light">2</button> -->
+												<!-- <button class="btn btn-light">3</button> -->
+												<!-- <button class="btn btn-light">4</button> -->
 											</div>
 
 											<div class="btn-group btn-corner">
-												<button class="btn">5</button>
-												<button class="btn">6</button>
-												<button class="btn">7</button>
+											<span ng-repeat="cpg in box6Cont"> 
+											<a href="" class="{{cpg.buttons}}">
+											{{cpg.data}}</a>
+											</span>
+												
 											</div>
 
-											<div class="btn-group">
+										<!-- 	<div class="btn-group">
 												<button class="btn btn-grey">8</button>
-											</div>
+											</div> -->
 										</div>
-										
-
-										<p></p>
+									
+										</p>
 										<div class="btn-group btn-group-vertical">
-											<button class="btn" type="button">
-												<i class="icon-only ace-icon fa fa-align-left"></i>
-											</button>
-
-											<button class="btn" type="button">
-												<i class="icon-only ace-icon fa fa-align-center"></i>
-											</button>
-
-											<button class="btn" type="button">
-												<i class="icon-only ace-icon fa fa-align-right"></i>
-											</button>
-
-											<button class="btn" type="button">
-												<i class="icon-only ace-icon fa fa-align-justify"></i>
-											</button>
+											<span ng-repeat="cpg in box6Conts"> 
+											<a href="" class="{{cpg.buttons}}">
+											<div class="clearfix"></div>
+											<i class="{{cpg.size}}"></i>
+											</a>
+											</span>
+											
 										</div>
 
 										<div class="space-6"></div>
 										
 
 										<p>
-											<button id="loading-btn" type="button" class="btn btn-success" data-loading-text="Loading...">Loading state</button>
-											<button type="button" class="btn btn-primary" data-toggle="button">Single Toggle</button>
-											<button type="button" class="btn btn-sm btn-danger" data-toggle="button">Small</button>
-											<button type="button" class="btn btn-xs btn-info" data-toggle="button">Mini</button>
+										<span ng-repeat="cpg in box6Con"> 
+											<a id="loading-btn" type="button" class="{{cpg.buttons}}"data-loading-text="Loading...">
+											
+											{{cpg.data}}
+											</a>
+											</span>
+										
 										</p>
 
 										<p></p>
 										<div>
-											<span>Checkbox: &nbsp;</span>
-
-											<div data-toggle="buttons" class="btn-group">
-												<label class="btn btn-sm">
-													<input type="checkbox" value="1" />
-													<i class="icon-only ace-icon fa fa-bold bigger-110"></i>
+											
+												<span>Checkbox: &nbsp;</span>
+											 <div data-toggle="buttons" class="btn-group">
+											 
+											 <span ng-repeat="cpg in box6Data"> 
+												<label class="{{cpg.buttons}}">
+													<!-- <input type="checkbox" value="2" /> -->
+													<i class="{{cpg.style}}"></i>
 												</label>
-
-												<label class="btn btn-sm">
-													<input type="checkbox" value="2" />
-													<i class="icon-only ace-icon fa fa-italic bigger-110"></i>
-												</label>
-
-												<label class="btn btn-sm">
-													<input type="checkbox" value="3" />
-													<i class="icon-only ace-icon fa fa-underline bigger-110"></i>
-												</label>
+											</span>
+											
 											</div>
 										</div>
 										
@@ -563,45 +498,33 @@
 
 											<!-- #section:elements.button.group -->
 											<div data-toggle="buttons" class="btn-group btn-overlap btn-corner">
-												<label class="btn btn-sm btn-white btn-info">
-													<input type="checkbox" value="1" />
-													<i class="icon-only ace-icon fa fa-bold bigger-110"></i>
+											
+											 <span ng-repeat="cpg in box6Datas"> 
+												<label class="{{cpg.buttons}}">
+													<!-- <input type="checkbox" value="1" /> -->
+													<i class="{{cpg.style}}"></i>
 												</label>
-
-												<label class="btn btn-sm btn-white btn-info">
-													<input type="checkbox" value="2" />
-													<i class="icon-only ace-icon fa fa-italic bigger-110"></i>
-												</label>
-
-												<label class="btn btn-sm btn-white btn-info">
-													<input type="checkbox" value="3" />
-													<i class="icon-only ace-icon fa fa-underline bigger-110"></i>
-												</label>
+											</span>
+											
 											</div>
 
 											<!-- /section:elements.button.group -->
 										</div>
-										
-
-										<p></p>
+										</br>
 										<div>
+										
 											<span>Radio: &nbsp;</span>
 
 											<div data-toggle="buttons" class="btn-group">
-												<label class="btn btn-primary">
-													<input type="radio" value="1" />
-													<i class="icon-only ace-icon fa fa-align-left"></i>
+											
+											<span ng-repeat="cpg in box6Detail"> 
+												<label class="{{cpg.buttons}}">
+													<!-- <input type="radio" value="1" /> -->
+													<i class="{{cpg.style}}"></i>
 												</label>
-
-												<label class="btn btn-primary">
-													<input type="radio" value="2" />
-													<i class="icon-only ace-icon fa fa-align-center"></i>
-												</label>
-
-												<label class="btn btn-primary">
-													<input type="radio" value="3" />
-													<i class="icon-only ace-icon fa fa-align-right"></i>
-												</label>
+												
+											</span>
+											
 											</div>
 
 											<label class="btn btn-primary" data-toggle="button">
@@ -612,7 +535,7 @@
 									</div><!-- /.span -->
 
 									<div class="col-sm-6">
-										<h3 class="header smaller lighter green">Button Dropdown</h3>
+										<h3 class="header smaller lighter green">xxxxxx</h3>
 
 										<p></p>
 										<div class="btn-toolbar">
@@ -1030,7 +953,7 @@
 								<hr />
 								<div class="row">
 									<div class="col-sm-6">
-										<h3 class="header smaller lighter green">Lables &amp; Badges</h3>
+										<h3 class="header smaller lighter green">Lables & Badges</h3>
 
 										<!-- #section:elements.label -->
 										<p>
@@ -1975,15 +1898,30 @@
 					</div><!-- /.page-content -->
 				</div>
 			</div><!-- /.main-content -->
-	
-	
-</div>
-</div>
-</div>
+
+			
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+			</a>
+		</div><!-- /.main-container -->
+
+
+
+
+		<!-- basic scripts -->
 
 		<!--[if !IE]> -->
 		<script src="components/jquery/dist/jquery.js"></script>
 
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script src="components/jquery.1x/dist/jquery.js"></script>
+<![endif]-->
+		<script type="text/javascript">
+			if('ontouchstart' in document.documentElement) document.write("<script src='components/_mod/jquery.mobile.custom/jquery.mobile.custom.js'>"+"<"+"/script>");
+		</script>
 		<script src="components/bootstrap/dist/js/bootstrap.js"></script>
 
 		<!-- page specific plugin scripts -->
